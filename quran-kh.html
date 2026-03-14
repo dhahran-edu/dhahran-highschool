@@ -243,7 +243,13 @@ body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:var(--off);color:
 .cat-bdg.edu{background:#dbeafe;color:#1e40af}.cat-bdg.ops{background:#fef3c7;color:#92400e}
 .cat-bdg.fin{background:#d1fae5;color:#065f46}.cat-bdg.hr{background:#ede9fe;color:#5b21b6}
 
-/* HOODS CTRL */
+/* PIN */
+.pin-dot{width:14px;height:14px;border-radius:50%;border:2px solid var(--border);background:#fff;transition:all .2s}
+.pin-dot.filled{background:var(--primary);border-color:var(--primary)}
+.pin-dot.error{background:var(--danger);border-color:var(--danger)}
+.pin-btn{padding:16px;border:2px solid var(--border);border-radius:var(--rs);background:#fff;font-family:inherit;font-size:18px;font-weight:700;color:var(--primary);cursor:pointer;transition:all .18s}
+.pin-btn:hover{background:var(--primary);color:#fff;border-color:var(--primary)}
+.pin-btn:active{transform:scale(.94)}
 .hood-row{display:grid;grid-template-columns:1fr 100px 36px;gap:8px;align-items:center;margin-bottom:8px}
 .hood-inp{padding:7px 10px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none;width:100%}
 .hood-inp:focus{border-color:var(--cyan)}
@@ -394,8 +400,43 @@ body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:var(--off);color:
   </div>
 </div>
 
+
 <!-- CONTROL PANEL -->
 <div class="page" id="page-ctrl">
+
+  <!-- شاشة الرقم السري -->
+  <div id="ctrl-lock" style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;gap:24px">
+    <div style="background:#fff;border-radius:var(--r);padding:40px 36px;box-shadow:var(--shm);border:1px solid var(--border);text-align:center;width:100%;max-width:360px">
+      <div style="font-size:48px;margin-bottom:12px">🔒</div>
+      <h3 style="font-size:18px;font-weight:900;color:var(--primary);margin-bottom:6px">لوحة التحكم</h3>
+      <p style="font-size:12px;color:var(--tl);margin-bottom:24px">أدخل الرقم السري للمتابعة</p>
+      <div style="display:flex;gap:10px;justify-content:center;margin-bottom:16px" id="pin-dots">
+        <div class="pin-dot" id="pd0"></div>
+        <div class="pin-dot" id="pd1"></div>
+        <div class="pin-dot" id="pd2"></div>
+        <div class="pin-dot" id="pd3"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px">
+        <button onclick="pinPress('1')" class="pin-btn">1</button>
+        <button onclick="pinPress('2')" class="pin-btn">2</button>
+        <button onclick="pinPress('3')" class="pin-btn">3</button>
+        <button onclick="pinPress('4')" class="pin-btn">4</button>
+        <button onclick="pinPress('5')" class="pin-btn">5</button>
+        <button onclick="pinPress('6')" class="pin-btn">6</button>
+        <button onclick="pinPress('7')" class="pin-btn">7</button>
+        <button onclick="pinPress('8')" class="pin-btn">8</button>
+        <button onclick="pinPress('9')" class="pin-btn">9</button>
+        <button class="pin-btn" style="visibility:hidden"></button>
+        <button onclick="pinPress('0')" class="pin-btn">0</button>
+        <button onclick="pinPress('⌫')" class="pin-btn" style="font-size:20px">⌫</button>
+      </div>
+      <p id="pin-err" style="color:var(--danger);font-size:12px;font-weight:700;min-height:18px"></p>
+      <p style="font-size:11px;color:var(--tl);margin-top:8px">الرقم الافتراضي: <strong>1234</strong> — يمكن تغييره من داخل لوحة التحكم</p>
+    </div>
+  </div>
+
+  <!-- محتوى لوحة التحكم — مخفي حتى الدخول -->
+  <div id="ctrl-content" style="display:none">
   <button class="back-btn" onclick="showPage('landing')">← الرئيسية</button>
   <div class="sec-hdr"><h2>لوحة التحكم</h2><div class="sec-div"></div><div class="sec-badge">تحديث البيانات — جميع الأقسام</div></div>
 
@@ -569,7 +610,23 @@ body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:var(--off);color:
       </div>
     </div>
   </div>
-</div>
+
+  <!-- تغيير الرقم السري -->
+  <div class="ctrl-sec">
+    <div class="ctrl-head"><span style="font-size:20px">🔑</span><h3>تغيير الرقم السري</h3></div>
+    <div class="ctrl-body">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;max-width:500px">
+        <div class="ctrl-field"><label>الرقم الحالي</label><input type="password" id="pin-old" maxlength="4" class="fi" placeholder="••••" style="text-align:center;letter-spacing:6px;font-size:18px"></div>
+        <div class="ctrl-field"><label>الرقم الجديد</label><input type="password" id="pin-new" maxlength="4" class="fi" placeholder="••••" style="text-align:center;letter-spacing:6px;font-size:18px"></div>
+        <div class="ctrl-field"><label>تأكيد الرقم</label><input type="password" id="pin-confirm" maxlength="4" class="fi" placeholder="••••" style="text-align:center;letter-spacing:6px;font-size:18px"></div>
+      </div>
+      <p id="pin-change-msg" style="font-size:12px;font-weight:700;min-height:18px;margin-top:8px"></p>
+      <button class="ctrl-save" onclick="changePin()" style="margin-top:4px">🔑 تغيير الرقم السري</button>
+    </div>
+  </div>
+
+  </div><!-- /ctrl-content -->
+</div><!-- /page-ctrl -->
 
 <!-- MODALS -->
 <div class="overlay" id="modal-halqa">
@@ -822,7 +879,7 @@ const pageRenderers = {
   admin:   () => renderAdmin(latestYear()),
   finance: () => renderFinance(latestYear()),
   kpi:     () => { renderKpis('all'); document.querySelectorAll('.cat-btn').forEach((b,i)=>b.classList.toggle('active',i===0)); },
-  ctrl:    () => initCtrl()
+  ctrl:    () => { /* initCtrl يُستدعى بعد إدخال الرقم السري */ }
 };
 
 function showPage(id) {
@@ -832,6 +889,16 @@ function showPage(id) {
   const nb=document.querySelector('[data-p="'+id+'"]'); if(nb) nb.classList.add('active');
   else { const h=document.querySelector('[data-p="landing"]'); if(h) h.classList.add('active'); }
   if(pageRenderers[id]) pageRenderers[id]();
+  // قفل لوحة التحكم عند الخروج منها
+  if(id !== 'ctrl' && _pinUnlocked) {
+    _pinUnlocked = false;
+    _pinEntry = '';
+    const lock = document.getElementById('ctrl-lock');
+    const content = document.getElementById('ctrl-content');
+    if(lock) lock.style.display = 'flex';
+    if(content) content.style.display = 'none';
+    updatePinDots();
+  }
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
@@ -1820,7 +1887,67 @@ function exportKpiExcel() {
 }
 
 // ═══════════════════════════════════════════════════════
-// FORMS
+// PIN LOCK
+// ═══════════════════════════════════════════════════════
+let _pin = '1234';
+let _pinEntry = '';
+let _pinUnlocked = false;
+
+function pinPress(val) {
+  if(val === '⌫') {
+    _pinEntry = _pinEntry.slice(0,-1);
+  } else if(_pinEntry.length < 4) {
+    _pinEntry += val;
+  }
+  updatePinDots();
+  if(_pinEntry.length === 4) {
+    setTimeout(checkPin, 150);
+  }
+}
+
+function updatePinDots(state) {
+  for(let i=0;i<4;i++) {
+    const dot = document.getElementById('pd'+i);
+    if(!dot) continue;
+    dot.className = 'pin-dot';
+    if(state==='error') dot.classList.add('error');
+    else if(i < _pinEntry.length) dot.classList.add('filled');
+  }
+}
+
+function checkPin() {
+  if(_pinEntry === _pin) {
+    _pinUnlocked = true;
+    document.getElementById('ctrl-lock').style.display = 'none';
+    document.getElementById('ctrl-content').style.display = 'block';
+    initCtrl();
+  } else {
+    updatePinDots('error');
+    document.getElementById('pin-err').textContent = 'رقم سري خاطئ — حاول مجدداً';
+    setTimeout(() => {
+      _pinEntry = '';
+      updatePinDots();
+      document.getElementById('pin-err').textContent = '';
+    }, 900);
+  }
+}
+
+function changePin() {
+  const oldEl = document.getElementById('pin-old');
+  const newEl = document.getElementById('pin-new');
+  const cfEl  = document.getElementById('pin-confirm');
+  const msg   = document.getElementById('pin-change-msg');
+  const old = oldEl.value.trim();
+  const nw  = newEl.value.trim();
+  const cf  = cfEl.value.trim();
+  if(old !== _pin) { msg.style.color='var(--danger)'; msg.textContent='الرقم الحالي غير صحيح'; return; }
+  if(!/^\d{4}$/.test(nw)) { msg.style.color='var(--danger)'; msg.textContent='الرقم الجديد يجب أن يكون 4 أرقام'; return; }
+  if(nw !== cf) { msg.style.color='var(--danger)'; msg.textContent='الرقمان الجديدان غير متطابقَين'; return; }
+  _pin = nw;
+  oldEl.value=''; newEl.value=''; cfEl.value='';
+  msg.style.color='var(--success)'; msg.textContent='✅ تم تغيير الرقم السري بنجاح';
+  setTimeout(()=>msg.textContent='', 3000);
+}
 // ═══════════════════════════════════════════════════════
 function openForm(id){ document.getElementById('modal-'+id).classList.add('open'); document.body.style.overflow='hidden'; }
 function closeForm(id){ document.getElementById('modal-'+id).classList.remove('open'); document.body.style.overflow=''; }
