@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
+<html lang="ar" dir="rtl"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>بوابة فرع الخبر — تحفيظ الشرقية</title>
@@ -264,10 +262,10 @@ body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:var(--off);color:
   <div class="hdr-inner">
     <div class="hdr-logo">
       <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
-        <path d="M18 4L28 10L28 22L18 28L8 22L8 10Z" fill="none" stroke="#60c4e4" stroke-width="1.5" opacity=".6"/>
-        <path d="M18 8L24 12L24 20L18 24L12 20L12 12Z" fill="rgba(96,196,228,.15)"/>
-        <circle cx="18" cy="16" r="4" fill="#60c4e4" opacity=".8"/>
-        <circle cx="18" cy="7" r="2" fill="#60c4e4"/>
+        <path d="M18 4L28 10L28 22L18 28L8 22L8 10Z" fill="none" stroke="#60c4e4" stroke-width="1.5" opacity=".6"></path>
+        <path d="M18 8L24 12L24 20L18 24L12 20L12 12Z" fill="rgba(96,196,228,.15)"></path>
+        <circle cx="18" cy="16" r="4" fill="#60c4e4" opacity=".8"></circle>
+        <circle cx="18" cy="7" r="2" fill="#60c4e4"></circle>
       </svg>
     </div>
     <div class="hdr-titles">
@@ -290,7 +288,7 @@ body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:var(--off);color:
 <main class="main">
 
 <!-- LANDING -->
-<div class="page active" id="page-landing">
+<div class="page" id="page-landing">
   <div class="landing">
     <div class="landing-hero">
       <h2>بوابة فرع الخبر</h2>
@@ -330,9 +328,375 @@ body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:var(--off);color:
 <!-- EDU -->
 <div class="page" id="page-edu">
   <button class="back-btn" onclick="showPage('landing')">← الرئيسية</button>
-  <div class="sec-hdr"><h2>الشؤون التعليمية</h2><div class="sec-div"></div><div class="sec-badge" id="edu-badge">—</div></div>
-  <div id="edu-yr-toggle"></div>
-  <div id="edu-content"></div>
+  <div class="sec-hdr"><h2>الشؤون التعليمية</h2><div class="sec-div"></div><div class="sec-badge" id="edu-badge">عام 2025</div></div>
+  <div id="edu-yr-toggle" class="yr-toggle">
+    <button class="yr-btn" onclick="(yr=&gt;renderEdu(yr))(2024)">2024</button>
+  
+    <button class="yr-btn active" onclick="(yr=&gt;renderEdu(yr))(2025)">2025</button>
+  </div>
+  <div id="edu-content">
+    <div class="stats-grid">
+      <div class="stat-card"><div class="bg-icon">📚</div><div class="stat-lbl">إجمالي الطلاب</div><div class="stat-val">4,698</div><div class="stat-chg up">↑ +925</div></div>
+      <div class="stat-card ac"><div class="bg-icon">📖</div><div class="stat-lbl">إجمالي الحلق</div><div class="stat-val">306</div><div class="stat-chg up">↑ +40</div></div>
+      <div class="stat-card md"><div class="bg-icon">⭐</div><div class="stat-lbl">الحفاظ الجدد</div><div class="stat-val">66</div><div class="stat-chg up">↑ +23</div></div>
+      <div class="stat-card"><div class="bg-icon">📝</div><div class="stat-lbl">نسبة النجاح</div><div class="stat-val">88.75%</div><div class="stat-chg dn">↓ دون هدف 95%</div></div>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="card-title"><div class="ct-icon">🎯</div>أنظمة الدراسة — 2025</div>
+        <p style="color:var(--tl);font-size:13px">لا توجد بيانات أنظمة الدراسة</p>
+      </div>
+      <div class="card">
+        <div class="card-title"><div class="ct-icon">📊</div>نمو الحفاظ — 2024 / 2025</div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div>
+              <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px">
+                <span style="color:var(--tl);font-weight:700">2024</span>
+                <span style="font-weight:900;color:var(--primary)">43 حافظاً</span>
+              </div>
+              <div class="bar-track"><div class="bar-fill" style="width:65.2%;"></div></div>
+            </div><div>
+              <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px">
+                <span style="color:var(--tl);font-weight:700">2025</span>
+                <span style="font-weight:900;color:var(--primary)">66 حافظاً</span>
+              </div>
+              <div class="bar-track"><div class="bar-fill" style="width:100.0%;background:linear-gradient(90deg,var(--success),#4ade80)"></div></div>
+            </div>
+          <div style="background:rgba(96,196,228,.08);border-radius:8px;padding:12px;border:1px solid rgba(96,196,228,.2)">
+            <div style="font-size:11px;color:var(--tl);font-weight:700;margin-bottom:4px">الأجزاء المحفوظة 2025</div>
+            <div style="font-size:26px;font-weight:900;color:var(--primary)">7,500 وجه</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><div class="ct-icon">📋</div>المؤشرات التعليمية التفصيلية</div>
+      <div style="overflow-x:auto">
+        <table class="tbl">
+          <thead><tr><th>المؤشر</th><th>2024</th><th>2025</th><th>التغيير</th></tr></thead>
+          <tbody>
+            <tr><td>المساجد</td><td>68</td><td><strong>82</strong></td>
+                <td><span style="color:var(--success);font-weight:700">+14</span></td></tr><tr><td>الحلق</td><td>266</td><td><strong>306</strong></td>
+                <td><span style="color:var(--success);font-weight:700">+40</span></td></tr><tr><td>الطلاب</td><td>3,773</td><td><strong>4,698</strong></td>
+                <td><span style="color:var(--success);font-weight:700">+925</span></td></tr><tr><td>المعلمين</td><td>266</td><td><strong>306</strong></td>
+                <td><span style="color:var(--success);font-weight:700">+40</span></td></tr><tr><td>الحفاظ</td><td>43</td><td><strong>66</strong></td>
+                <td><span style="color:var(--success);font-weight:700">+23</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- جدول المساجد التفصيلي -->
+    <div class="card">
+      <div class="card-title">
+        <div class="ct-icon">🕌</div>
+        تفاصيل المساجد والحلق — 2025
+        <span style="margin-right:auto;font-size:12px;color:var(--tl);font-weight:400" id="mosque-count-2025">71 مسجد</span>
+      </div>
+      
+
+      <!-- شريط الفلاتر والبحث -->
+      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px;padding:12px 14px;background:var(--off);border-radius:var(--rs);border:1px solid var(--border)">
+        <!-- بحث -->
+        <input type="text" id="mosque-search-2025" oninput="applyMosqueFilters('2025')" placeholder="🔍 بحث بالاسم أو الحي..." style="padding:7px 12px;border:1.5px solid var(--border);border-radius:20px;font-size:12px;outline:none;font-family:inherit;min-width:180px;flex:1;transition:border-color .2s" onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='var(--border)'">
+
+        <!-- فلتر الحي -->
+        <select id="mosque-hood-2025" onchange="applyMosqueFilters('2025')" style="padding:7px 12px;border:1.5px solid var(--border);border-radius:20px;font-size:12px;outline:none;font-family:inherit;background:#fff;cursor:pointer">
+          <option value="">كل الأحياء</option>
+          <option value=""></option><option value="أجيال">أجيال</option><option value="اجبال">اجبال</option><option value="الإسكان">الإسكان</option><option value="الاسكان">الاسكان</option><option value="الامواج">الامواج</option><option value="البايونية">البايونية</option><option value="البحر">البحر</option><option value="البحيرة">البحيرة</option><option value="البستان">البستان</option><option value="البندرية">البندرية</option><option value="التحلية">التحلية</option><option value="الثقبة">الثقبة</option><option value="الجامعة">الجامعة</option><option value="الجسر">الجسر</option><option value="الحزام">الحزام</option><option value="الحزام الاخضر">الحزام الاخضر</option><option value="الحمرا">الحمرا</option><option value="الخزامى">الخزامى</option><option value="الخزامي">الخزامي</option><option value="الدوحة">الدوحة</option><option value="الراكة">الراكة</option><option value="الراكه">الراكه</option><option value="الظهران">الظهران</option><option value="العربية">العربية</option><option value="العزيزية">العزيزية</option><option value="العقربية">العقربية</option><option value="العليا">العليا</option><option value="القصور">القصور</option><option value="اللؤلؤ">اللؤلؤ</option><option value="النورس">النورس</option><option value="الهدا">الهدا</option><option value="خ الشمالية">خ الشمالية</option><option value="م العمال">م العمال</option>
+        </select>
+
+        <!-- فلتر الفترات -->
+        <select id="mosque-periods-2025" onchange="applyMosqueFilters('2025')" style="padding:7px 12px;border:1.5px solid var(--border);border-radius:20px;font-size:12px;outline:none;font-family:inherit;background:#fff;cursor:pointer">
+          <option value="">كل الفترات</option>
+          <option value="1">فترة واحدة</option>
+          <option value="2">فترتان</option>
+          <option value="3">ثلاث فترات</option>
+        </select>
+
+        <!-- فلتر الحالة -->
+        <select id="mosque-status-2025" onchange="applyMosqueFilters('2025')" style="padding:7px 12px;border:1.5px solid var(--border);border-radius:20px;font-size:12px;outline:none;font-family:inherit;background:#fff;cursor:pointer">
+          <option value="">كل الحالات</option>
+          <option value="active">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+
+        <!-- عدد الصفوف -->
+        <div style="display:flex;align-items:center;gap:6px;margin-right:auto">
+          <span style="font-size:11px;color:var(--tl);white-space:nowrap">عرض:</span>
+          <select id="mosque-ps-2025" onchange="setMosquePageSize('2025',this.value)" style="padding:6px 10px;border:1.5px solid var(--border);border-radius:20px;font-size:12px;outline:none;font-family:inherit;background:#fff;cursor:pointer;font-weight:700;color:var(--primary)">
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="all">الكل</option>
+          </select>
+        </div>
+
+        <!-- زر إعادة تعيين -->
+        <button onclick="resetMosqueFilters('2025')" style="padding:6px 12px;border:1.5px solid var(--border);border-radius:20px;background:#fff;color:var(--tl);font-family:inherit;font-size:11px;font-weight:700;cursor:pointer;transition:all .18s" onmouseover="this.style.background='var(--border)'" onmouseout="this.style.background='#fff'">↺ إعادة تعيين</button>
+      </div>
+
+      <!-- الجدول -->
+      <div style="overflow-x:auto">
+        <table class="tbl" id="mosque-table-2025">
+          <thead>
+            <tr>
+              <th style="cursor:pointer;user-select:none" onclick="sortMosques('2025','index')">#</th>
+              <th style="cursor:pointer;user-select:none" onclick="sortMosques('2025','name')">اسم المسجد ↕</th>
+              <th style="cursor:pointer;user-select:none" onclick="sortMosques('2025','hood')">الحي ↕</th>
+              <th style="cursor:pointer;user-select:none;text-align:center" onclick="sortMosques('2025','halaq')">الحلق ↕</th>
+              <th style="cursor:pointer;user-select:none;text-align:center" onclick="sortMosques('2025','periods')">الفترات ↕</th>
+              <th style="cursor:pointer;user-select:none;text-align:center" onclick="sortMosques('2025','students')">الطلاب ↕</th>
+              <th>الحالة</th>
+            </tr>
+          </thead>
+          <tbody id="mosque-tbody-2025">
+            
+              <tr data-status="active" data-name="هيلة الغنام" data-hood="الحمرا" data-halaq="1" data-periods="1" data-students="14" data-index="0">
+                <td style="color:var(--tl);font-size:11px">1</td>
+                <td><strong>هيلة الغنام</strong></td>
+                <td><span style="background:rgba(96,196,228,.1);color:var(--primary);padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700">الحمرا</span></td>
+                <td style="text-align:center;font-weight:700;color:var(--primary)">1</td>
+                <td style="text-align:center;font-weight:700;color:var(--mid)">1</td>
+                <td style="text-align:center;font-weight:700">14</td>
+                <td><span class="bdg bdg-g">مدعوم</span></td>
+              </tr>
+              <tr data-status="active" data-name="ناصر خباب القحطاني" data-hood="الخزامي" data-halaq="1" data-periods="1" data-students="10" data-index="1">
+                <td style="color:var(--tl);font-size:11px">2</td>
+                <td><strong>ناصر خباب القحطاني</strong></td>
+                <td><span style="background:rgba(96,196,228,.1);color:var(--primary);padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700">الخزامي</span></td>
+                <td style="text-align:center;font-weight:700;color:var(--primary)">1</td>
+                <td style="text-align:center;font-weight:700;color:var(--mid)">1</td>
+                <td style="text-align:center;font-weight:700">10</td>
+                <td><span class="bdg bdg-g">مدعوم</span></td>
+              </tr>
+              <tr data-status="active" data-name="عبدالله بن رواحة" data-hood="م العمال" data-halaq="5" data-periods="1" data-students="49" data-index="2">
+                <td style="color:var(--tl);font-size:11px">3</td>
+                <td><strong>عبدالله بن رواحة</strong></td>
+                <td><span style="background:rgba(96,196,228,.1);color:var(--primary);padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700">م العمال</span></td>
+                <td style="text-align:center;font-weight:700;color:var(--primary)">5</td>
+                <td style="text-align:center;font-weight:700;color:var(--mid)">1</td>
+                <td style="text-align:center;font-weight:700">49</td>
+                <td><span class="bdg bdg-g">مدعوم</span></td>
+              </tr>
+              <tr data-status="active" data-name="الخريجي" data-hood="البندرية" data-halaq="5" data-periods="1" data-students="62" data-index="3">
+                <td style="color:var(--tl);font-size:11px">4</td>
+                <td><strong>الخريجي</strong></td>
+                <td><span style="background:rgba(96,196,228,.1);color:var(--primary);padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700">البندرية</span></td>
+                <td style="text-align:center;font-weight:700;color:var(--primary)">5</td>
+                <td style="text-align:center;font-weight:700;color:var(--mid)">1</td>
+                <td style="text-align:center;font-weight:700">62</td>
+                <td><span class="bdg bdg-g">مدعوم</span></td>
+              </tr>
+              <tr data-status="active" data-name="قوى الأمن" data-hood="الظهران" data-halaq="5" data-periods="1" data-students="65" data-index="4">
+                <td style="color:var(--tl);font-size:11px">5</td>
+                <td><strong>قوى الأمن</strong></td>
+                <td><span style="background:rgba(96,196,228,.1);color:var(--primary);padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700">الظهران</span></td>
+                <td style="text-align:center;font-weight:700;color:var(--primary)">5</td>
+                <td style="text-align:center;font-weight:700;color:var(--mid)">1</td>
+                <td style="text-align:center;font-weight:700">65</td>
+                <td><span class="bdg bdg-g">مدعوم</span></td>
+              </tr>
+              <tr data-status="active" data-name="فاطمة النعيمي" data-hood="الراكة" data-halaq="1" data-periods="1" data-students="22" data-index="5">
+                <td style="color:var(--tl);font-size:11px">6</td>
+                <td><strong>فاطمة النعيمي</strong></td>
+                <td><span style="background:rgba(96,196,228,.1);color:var(--primary);padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700">الراكة</span></td>
+                <td style="text-align:center;font-weight:700;color:var(--primary)">1</td>
+                <td style="text-align:center;font-weight:700;color:var(--mid)">1</td>
+                <td style="text-align:center;font-weight:700">22</td>
+                <td><span class="bdg bdg-g">مدعوم</span></td>
+              </tr>
+              <tr data-status="active" data-name="المعالي" data-hood="البحر" data-halaq="2" data-periods="1" data-students="26" data-index="6">
+                <td style="color:var(--tl);font-size:11px">7</td>
+                <td><strong>المعالي</strong></td>
+                <td><span style="background:rgba(96,196,228,.1);color:var(--primary);padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700">البحر</span></td>
+                <td style="text-align:center;font-weight:700;color:var(--primary)">2</td>
+                <td style="text-align:center;font-weight:700;color:var(--mid)">1</td>
+                <td style="text-align:center;font-weight:700">26</td>
+                <td><span class="bdg bdg-g">مدعوم</span></td>
+              </tr>
+              <tr data-status="active" data-name="منيرة السهلي" data-hood="العزيزية" data-halaq="5" data-periods="3" data-students="56" data-index="7">
+                <td style="color:var(--tl);font-size:11px">8</td>
+                <td><strong>منيرة السهلي</strong></td>
+                <td><span style="background:rgba(96,196,228,.1);color:var(--primary);padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700">العزيزية</span></td>
+                <td style="text-align:center;font-weight:700;color:var(--primary)">5</td>
+                <td style="text-align:center;font-weight:700;color:var(--mid)">3</td>
+                <td style="text-align:center;font-weight:700">56</td>
+                <td><span class="bdg bdg-g">مدعوم</span></td>
+              </tr>
+              <tr data-status="active" data-name="لؤلؤة التويجري" data-hood="العزيزية" data-halaq="3" data-periods="3" data-students="45" data-index="8">
+                <td style="color:var(--tl);font-size:11px">9</td>
+                <td><strong>لؤلؤة التويجري</strong></td>
+                <td><span style="background:rgba(96,196,228,.1);color:var(--primary);padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700">العزيزية</span></td>
+                <td style="text-align:center;font-weight:700;color:var(--primary)">3</td>
+                <td style="text-align:center;font-weight:700;color:var(--mid)">3</td>
+                <td style="text-align:center;font-weight:700">45</td>
+                <td><span class="bdg bdg-g">مدعوم</span></td>
+              </tr>
+              <tr data-status="active" data-name="بابيضان" data-hood="خ الشمالية" data-halaq="5" data-periods="3" data-students="70" data-index="9">
+                <td style="color:var(--tl);font-size:11px">10</td>
+                <td><strong>بابيضان</strong></td>
+                <td><span style="background:rgba(96,196,228,.1);color:var(--primary);padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700">خ الشمالية</span></td>
+                <td style="text-align:center;font-weight:700;color:var(--primary)">5</td>
+                <td style="text-align:center;font-weight:700;color:var(--mid)">3</td>
+                <td style="text-align:center;font-weight:700">70</td>
+                <td><span class="bdg bdg-g">مدعوم</span></td>
+              </tr>
+              <tr data-status="active" data-name="قماشة المجحد" data-hood="أجيال" data-halaq="4" data-periods="3" data-students="55" data-index="10">
+                <td style="color:var(--tl);font-size:11px">11</td>
+                <td><strong>قماشة المجحد</strong></td>
+                <td><span style="background:rgba(96,196,228,.1);color:var(--primary);padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700">أجيال</span></td>
+                <td style="text-align:center;font-weight:700;color:var(--primary)">4</td>
+                <td style="text-align:center;font-weight:700;color:var(--mid)">3</td>
+                <td style="text-align:center;font-weight:700">55</td>
+                <td><span class="bdg bdg-g">مدعوم</span></td>
+              </tr>
+              <tr data-status="active" data-name="الذاكرين" data-hood="البحر" data-halaq="1" data-periods="1" data-students="10" data-index="11">
+                <td style="color:var(--tl);font-size:11px">12</td>
+                <td><strong>الذاكرين</strong></td>
+                <td><span style="background:rgba(96,196,228,.1);color:var(--primary);padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700">البحر</span></td>
+                <td style="text-align:center;font-weight:700;color:var(--primary)">1</td>
+                <td style="text-align:center;font-weight:700;color:var(--mid)">1</td>
+                <td style="text-align:center;font-weight:700">10</td>
+                <td><span class="bdg bdg-g">مدعوم</span></td>
+              </tr>
+              <tr data-status="active" data-name="منيرة الخالدي" data-hood="العزيزية" data-halaq="2" data-periods="2" data-students="35" data-index="12">
+                <td style="color:var(--tl);font-size:11px">13</td>
+                <td><strong>منيرة الخالدي</strong></td>
+                <td><span style="background:rgba(96,196,228,.1);color:var(--primary);padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700">العزيزية</span></td>
+                <td style="text-align:center;font-weight:700;color:var(--primary)">2</td>
+                <td style="text-align:center;font-weight:700;color:var(--mid)">2</td>
+                <td style="text-align:center;font-weight:700">35</td>
+                <td><span class="bdg bdg-g">مدعوم</span></td>
+              </tr>
+              <tr data-status="active" data-name="صالح الحربي" data-hood="اجبال" data-halaq="2" data-periods="2" data-students="29" data-index="13">
+                <td style="color:var(--tl);font-size:11px">14</td>
+                <td><strong>صالح الحربي</strong></td>
+                <td><span style="background:rgba(96,196,228,.1);color:var(--primary);padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700">اجبال</span></td>
+                <td style="text-align:center;font-weight:700;color:var(--primary)">2</td>
+                <td style="text-align:center;font-weight:700;color:var(--mid)">2</td>
+                <td style="text-align:center;font-weight:700">29</td>
+                <td><span class="bdg bdg-g">مدعوم</span></td>
+              </tr>
+              <tr data-status="active" data-name="ابن عثيمين" data-hood="الثقبة" data-halaq="3" data-periods="1" data-students="75" data-index="14">
+                <td style="color:var(--tl);font-size:11px">15</td>
+                <td><strong>ابن عثيمين</strong></td>
+                <td><span style="background:rgba(96,196,228,.1);color:var(--primary);padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700">الثقبة</span></td>
+                <td style="text-align:center;font-weight:700;color:var(--primary)">3</td>
+                <td style="text-align:center;font-weight:700;color:var(--mid)">1</td>
+                <td style="text-align:center;font-weight:700">75</td>
+                <td><span class="bdg bdg-g">مدعوم</span></td>
+              </tr>
+              <tr data-status="active" data-name="التقوي" data-hood="الثقبة" data-halaq="2" data-periods="2" data-students="22" data-index="15">
+                <td style="color:var(--tl);font-size:11px">16</td>
+                <td><strong>التقوي</strong></td>
+                <td><span style="background:rgba(96,196,228,.1);color:var(--primary);padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700">الثقبة</span></td>
+                <td style="text-align:center;font-weight:700;color:var(--primary)">2</td>
+                <td style="text-align:center;font-weight:700;color:var(--mid)">2</td>
+                <td style="text-align:center;font-weight:700">22</td>
+                <td><span class="bdg bdg-g">مدعوم</span></td>
+              </tr>
+              <tr data-status="active" data-name="الحسين بن علي" data-hood="الثقبة" data-halaq="4" data-periods="1" data-students="39" data-index="16">
+                <td style="color:var(--tl);font-size:11px">17</td>
+                <td><strong>الحسين بن علي</strong></td>
+                <td><span style="background:rgba(96,196,228,.1);color:var(--primary);padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700">الثقبة</span></td>
+                <td style="text-align:center;font-weight:700;color:var(--primary)">4</td>
+                <td style="text-align:center;font-weight:700;color:var(--mid)">1</td>
+                <td style="text-align:center;font-weight:700">39</td>
+                <td><span class="bdg bdg-g">مدعوم</span></td>
+              </tr>
+              <tr data-status="active" data-name="الفاروق" data-hood="خ الشمالية" data-halaq="7" data-periods="1" data-students="95" data-index="17">
+                <td style="color:var(--tl);font-size:11px">18</td>
+                <td><strong>الفاروق</strong></td>
+                <td><span style="background:rgba(96,196,228,.1);color:var(--primary);padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700">خ الشمالية</span></td>
+                <td style="text-align:center;font-weight:700;color:var(--primary)">7</td>
+                <td style="text-align:center;font-weight:700;color:var(--mid)">1</td>
+                <td style="text-align:center;font-weight:700">95</td>
+                <td><span class="bdg bdg-g">مدعوم</span></td>
+              </tr>
+              <tr data-status="active" data-name="المدينة المنورة" data-hood="البايونية" data-halaq="1" data-periods="1" data-students="12" data-index="18">
+                <td style="color:var(--tl);font-size:11px">19</td>
+                <td><strong>المدينة المنورة</strong></td>
+                <td><span style="background:rgba(96,196,228,.1);color:var(--primary);padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700">البايونية</span></td>
+                <td style="text-align:center;font-weight:700;color:var(--primary)">1</td>
+                <td style="text-align:center;font-weight:700;color:var(--mid)">1</td>
+                <td style="text-align:center;font-weight:700">12</td>
+                <td><span class="bdg bdg-g">مدعوم</span></td>
+              </tr>
+              <tr data-status="active" data-name="الهداية" data-hood="خ الشمالية" data-halaq="4" data-periods="1" data-students="42" data-index="19">
+                <td style="color:var(--tl);font-size:11px">20</td>
+                <td><strong>الهداية</strong></td>
+                <td><span style="background:rgba(96,196,228,.1);color:var(--primary);padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700">خ الشمالية</span></td>
+                <td style="text-align:center;font-weight:700;color:var(--primary)">4</td>
+                <td style="text-align:center;font-weight:700;color:var(--mid)">1</td>
+                <td style="text-align:center;font-weight:700">42</td>
+                <td><span class="bdg bdg-g">مدعوم</span></td>
+              </tr>
+              <tr data-status="active" data-name="أبو عبيدة" data-hood="الثقبة" data-halaq="2" data-periods="2" data-students="49" data-index="20">
+                <td style="color:var(--tl);font-size:11px">21</td>
+                <td><strong>أبو عبيدة</strong></td>
+                <td><span style="background:rgba(96,196,228,.1);color:var(--primary);padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700">الثقبة</span></td>
+                <td style="text-align:center;font-weight:700;color:var(--primary)">2</td>
+                <td style="text-align:center;font-weight:700;color:var(--mid)">2</td>
+                <td style="text-align:center;font-weight:700">49</td>
+                <td><span class="bdg bdg-g">مدعوم</span></td>
+              </tr>
+              <tr data-status="active" data-name="عمر بن عبدالعزيز" data-hood="العقربية" data-halaq="6" data-periods="1" data-students="90" data-index="21">
+                <td style="color:var(--tl);font-size:11px">22</td>
+                <td><strong>عمر بن عبدالعزيز</strong></td>
+                <td><span style="background:rgba(96,196,228,.1);color:var(--primary);padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700">العقربية</span></td>
+                <td style="text-align:center;font-weight:700;color:var(--primary)">6</td>
+                <td style="text-align:center;font-weight:700;color:var(--mid)">1</td>
+                <td style="text-align:center;font-weight:700">90</td>
+                <td><span class="bdg bdg-g">مدعوم</span></td>
+              </tr>
+              <tr data-status="active" data-name="باطوق" data-hood="البايونية" data-halaq="1" data-periods="1" data-students="7" data-index="22">
+                <td style="color:var(--tl);font-size:11px">23</td>
+                <td><strong>باطوق</strong></td>
+                <td><span style="background:rgba(96,196,228,.1);color:var(--primary);padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700">البايونية</span></td>
+                <td style="text-align:center;font-weight:700;color:var(--primary)">1</td>
+                <td style="text-align:center;font-weight:700;color:var(--mid)">1</td>
+                <td style="text-align:center;font-weight:700">7</td>
+                <td><span class="bdg bdg-g">مدعوم</span></td>
+              </tr>
+              <tr data-status="active" data-name="بلال بن رباح" data-hood="خ الشمالية" data-halaq="2" data-periods="1" data-students="35" data-index="23">
+                <td style="color:var(--tl);font-size:11px">24</td>
+                <td><strong>بلال بن رباح</strong></td>
+                <td><span style="background:rgba(96,196,228,.1);color:var(--primary);padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700">خ الشمالية</span></td>
+                <td style="text-align:center;font-weight:700;color:var(--primary)">2</td>
+                <td style="text-align:center;font-weight:700;color:var(--mid)">1</td>
+                <td style="text-align:center;font-weight:700">35</td>
+                <td><span class="bdg bdg-g">مدعوم</span></td>
+              </tr>
+              <tr data-status="active" data-name="جعفر بن أبي طالب" data-hood="خ الشمالية" data-halaq="3" data-periods="1" data-students="65" data-index="24">
+                <td style="color:var(--tl);font-size:11px">25</td>
+                <td><strong>جعفر بن أبي طالب</strong></td>
+                <td><span style="background:rgba(96,196,228,.1);color:var(--primary);padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700">خ الشمالية</span></td>
+                <td style="text-align:center;font-weight:700;color:var(--primary)">3</td>
+                <td style="text-align:center;font-weight:700;color:var(--mid)">1</td>
+                <td style="text-align:center;font-weight:700">65</td>
+                <td><span class="bdg bdg-g">مدعوم</span></td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- التذييل: الإجماليات + رسالة النتائج -->
+      <div style="margin-top:10px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+        <div style="display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--tl);background:var(--off);padding:8px 14px;border-radius:var(--rs)">
+          <span>إجمالي الحلق: <strong style="color:var(--primary)" id="mosque-total-halaq-2025">266</strong></span>
+          <span>إجمالي الطلاب: <strong style="color:var(--primary)" id="mosque-total-students-2025">4,141</strong></span>
+          <span>متوسط طلاب/مسجد: <strong style="color:var(--primary)" id="mosque-avg-2025">58</strong></span>
+        </div>
+        <span id="mosque-showing-2025" style="font-size:11px;color:var(--tl)">يعرض 1-25 من 71</span>
+      </div>
+
+      
+    </div>
+  </div>
 </div>
 
 <!-- ADMIN -->
@@ -441,26 +805,23 @@ body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:var(--off);color:
 
 
 <!-- CONTROL PANEL -->
-<div class="page" id="page-ctrl">
+<div class="page active" id="page-ctrl">
 
   <!-- شاشة الرقم السري -->
-  <div id="ctrl-lock" style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;gap:24px">
+  <div id="ctrl-lock" style="display: none; flex-direction: column; align-items: center; justify-content: center; min-height: 60vh; gap: 24px;">
     <div style="background:#fff;border-radius:var(--r);padding:40px 36px;box-shadow:var(--shm);border:1px solid var(--border);text-align:center;width:100%;max-width:340px">
       <div style="font-size:48px;margin-bottom:12px">🔒</div>
       <h3 style="font-size:18px;font-weight:900;color:var(--primary);margin-bottom:6px">لوحة التحكم</h3>
       <p style="font-size:12px;color:var(--tl);margin-bottom:24px">أدخل الرقم السري للمتابعة</p>
-      <input type="password" id="pin-input" maxlength="20" placeholder="••••"
-        style="width:100%;padding:14px 16px;border:2px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:22px;text-align:center;letter-spacing:6px;outline:none;transition:border-color .2s;background:#fff;color:var(--primary)"
-        oninput="onPinInput()" onkeydown="if(event.key==='Enter') submitPin()"
-        onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='var(--border)'">
+      <input type="password" id="pin-input" maxlength="20" placeholder="••••" style="width: 100%; padding: 14px 16px; border-color: var(--border); border-top-style: ; border-top-width: ; border-right-style: ; border-right-width: ; border-bottom-style: ; border-bottom-width: ; border-left-style: ; border-left-width: ; border-image-source: ; border-image-slice: ; border-image-width: ; border-image-outset: ; border-image-repeat: ; border-radius: var(--rs); font-family: inherit; font-size: 22px; text-align: center; letter-spacing: 6px; outline: none; transition: border-color 0.2s; background: rgb(255, 255, 255); color: var(--primary);" oninput="onPinInput()" onkeydown="if(event.key==='Enter') submitPin()" onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='var(--border)'">
       <p id="pin-err" style="color:var(--danger);font-size:12px;font-weight:700;min-height:18px;margin-top:10px"></p>
-      <button onclick="submitPin()" style="width:100%;margin-top:8px;padding:12px;background:var(--primary);color:#fff;border:none;border-radius:var(--rs);font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:opacity .18s" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">دخول</button>
+      <button onclick="submitPin()" style="width: 100%; margin-top: 8px; padding: 12px; background: var(--primary); color: rgb(255, 255, 255); border: none; border-radius: var(--rs); font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer; transition: opacity 0.18s; opacity: 1;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">دخول</button>
       <p style="font-size:11px;color:var(--tl);margin-top:14px">الرقم الافتراضي: <strong>1234</strong></p>
     </div>
   </div>
 
   <!-- محتوى لوحة التحكم — مخفي حتى الدخول -->
-  <div id="ctrl-content" style="display:none">
+  <div id="ctrl-content" style="display: block;">
   <button class="back-btn" onclick="showPage('landing')">← الرئيسية</button>
   <div class="sec-hdr"><h2>لوحة التحكم</h2><div class="sec-div"></div><div class="sec-badge">تحديث البيانات — جميع الأقسام</div></div>
 
@@ -474,12 +835,12 @@ body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:var(--off);color:
         <span style="font-size:12px;background:rgba(96,196,228,.12);color:var(--primary);padding:4px 12px;border-radius:20px;font-weight:700">🕌 بيانات_المساجد.xlsx</span>
       </div>
       <div class="upload-zone" id="upload-zone" ondragover="event.preventDefault();this.classList.add('drag')" ondragleave="this.classList.remove('drag')" ondrop="handleDrop(event)">
-        <input type="file" accept=".xlsx,.xls" multiple onchange="handleMultiUpload(this.files)">
+        <input type="file" accept=".xlsx,.xls" multiple="" onchange="handleMultiUpload(this.files)">
         <div class="upload-icon">📁</div>
         <h4>اسحب الملفين هنا أو انقر للاختيار</h4>
         <p>يُحدِّث جميع الأقسام تلقائياً لجميع السنوات الموجودة في الملف</p>
       </div>
-      <div class="upload-res" id="upload-res"></div>
+      <div class="upload-res ok" id="upload-res" style="display: block;">🕌 بيانات_المساجد.xlsx: تم إضافة 71 + تحديث 2 مسجداً<br><small>✅ جميع الأقسام جاهزة للعرض. راجع الأرقام وعدّل ما يلزم ثم اضغط حفظ.</small></div>
       <p style="font-size:11px;color:var(--tl);margin-top:8px">* مكتبة قراءة Excel تحتاج اتصال بالإنترنت عند أول تشغيل فقط.</p>
     </div>
   </div>
@@ -555,7 +916,17 @@ body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:var(--off);color:
     <div class="ctrl-head"><span style="font-size:20px">📅</span><h3>اختر السنة للتعديل اليدوي</h3></div>
     <div class="ctrl-body">
       <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
-        <div id="ctrl-yr-toggle" class="yr-toggle" style="margin-bottom:0"></div>
+        <div id="ctrl-yr-toggle" class="yr-toggle" style="margin-bottom:0">
+    <div style="display:inline-flex;align-items:center;gap:0;background:transparent;border-radius:20px;">
+      <button class="yr-btn" onclick="selectCtrlYear(2024)" style="">2024</button>
+      <button onclick="deleteDataYear(2024)" title="حذف عام 2024" style="background:none;border:none;cursor:pointer;font-size:12px;padding:0 8px 0 2px;color:var(--tl);line-height:1;transition:color .18s" onmouseover="this.style.color='var(--danger)'" onmouseout="this.style.color='var(--tl)'">✕</button>
+    </div>
+  
+    <div style="display:inline-flex;align-items:center;gap:0;background:var(--primary);border-radius:20px;box-shadow:0 2px 8px rgba(50,51,102,.3)">
+      <button class="yr-btn active" onclick="selectCtrlYear(2025)" style="background:transparent;color:#fff;padding-left:6px">2025</button>
+      <button onclick="deleteDataYear(2025)" title="حذف عام 2025" style="background:none;border:none;cursor:pointer;font-size:12px;padding:0 8px 0 2px;color:rgba(255,255,255,.7);line-height:1;transition:color .18s" onmouseover="this.style.color='var(--danger)'" onmouseout="this.style.color='rgba(255,255,255,.7)'">✕</button>
+    </div>
+  </div>
         <button onclick="openAddYearModal()" style="padding:8px 18px;border:2px dashed var(--cyan);border-radius:20px;background:rgba(96,196,228,.06);color:var(--primary);font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;transition:all .18s" onmouseover="this.style.background='rgba(96,196,228,.15)'" onmouseout="this.style.background='rgba(96,196,228,.06)'">＋ إضافة سنة جديدة</button>
       </div>
     </div>
@@ -563,7 +934,7 @@ body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:var(--off);color:
 
   <!-- بيانات الأقسام -->
   <div class="ctrl-sec">
-    <div class="ctrl-head"><span style="font-size:20px">✏️</span><h3>تحديث بيانات جميع الأقسام — <span id="ctrl-year-label">—</span></h3></div>
+    <div class="ctrl-head"><span style="font-size:20px">✏️</span><h3>تحديث بيانات جميع الأقسام — <span id="ctrl-year-label">عام 2025</span></h3></div>
     <div class="ctrl-body">
 
       <div class="ctrl-group-title">🕌 المساجد والحلق</div>
@@ -621,7 +992,67 @@ body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:var(--off);color:
       </div>
 
       <div class="ctrl-group-title">🏘️ توزيع الأحياء</div>
-      <div id="hoods-ctrl"></div>
+      <div id="hoods-ctrl">
+    <div class="hood-row">
+      <input class="hood-inp" type="text" id="hood-n-0" value="خ - شمالية" placeholder="اسم الحي">
+      <input class="hood-inp" type="number" id="hood-v-0" value="515" min="0" style="text-align:center">
+      <button class="del-btn" onclick="removeHood(0)">✕</button>
+    </div>
+  
+    <div class="hood-row">
+      <input class="hood-inp" type="text" id="hood-n-1" value="الإسكان" placeholder="اسم الحي">
+      <input class="hood-inp" type="number" id="hood-v-1" value="380" min="0" style="text-align:center">
+      <button class="del-btn" onclick="removeHood(1)">✕</button>
+    </div>
+  
+    <div class="hood-row">
+      <input class="hood-inp" type="text" id="hood-n-2" value="الثقبة" placeholder="اسم الحي">
+      <input class="hood-inp" type="number" id="hood-v-2" value="367" min="0" style="text-align:center">
+      <button class="del-btn" onclick="removeHood(2)">✕</button>
+    </div>
+  
+    <div class="hood-row">
+      <input class="hood-inp" type="text" id="hood-n-3" value="الحزام" placeholder="اسم الحي">
+      <input class="hood-inp" type="number" id="hood-v-3" value="326" min="0" style="text-align:center">
+      <button class="del-btn" onclick="removeHood(3)">✕</button>
+    </div>
+  
+    <div class="hood-row">
+      <input class="hood-inp" type="text" id="hood-n-4" value="م - العمال" placeholder="اسم الحي">
+      <input class="hood-inp" type="number" id="hood-v-4" value="258" min="0" style="text-align:center">
+      <button class="del-btn" onclick="removeHood(4)">✕</button>
+    </div>
+  
+    <div class="hood-row">
+      <input class="hood-inp" type="text" id="hood-n-5" value="الدانة" placeholder="اسم الحي">
+      <input class="hood-inp" type="number" id="hood-v-5" value="171" min="0" style="text-align:center">
+      <button class="del-btn" onclick="removeHood(5)">✕</button>
+    </div>
+  
+    <div class="hood-row">
+      <input class="hood-inp" type="text" id="hood-n-6" value="العقربية" placeholder="اسم الحي">
+      <input class="hood-inp" type="number" id="hood-v-6" value="156" min="0" style="text-align:center">
+      <button class="del-btn" onclick="removeHood(6)">✕</button>
+    </div>
+  
+    <div class="hood-row">
+      <input class="hood-inp" type="text" id="hood-n-7" value="الجسر" placeholder="اسم الحي">
+      <input class="hood-inp" type="number" id="hood-v-7" value="140" min="0" style="text-align:center">
+      <button class="del-btn" onclick="removeHood(7)">✕</button>
+    </div>
+  
+    <div class="hood-row">
+      <input class="hood-inp" type="text" id="hood-n-8" value="الظهران" placeholder="اسم الحي">
+      <input class="hood-inp" type="number" id="hood-v-8" value="140" min="0" style="text-align:center">
+      <button class="del-btn" onclick="removeHood(8)">✕</button>
+    </div>
+  
+    <div class="hood-row">
+      <input class="hood-inp" type="text" id="hood-n-9" value="البايونية" placeholder="اسم الحي">
+      <input class="hood-inp" type="number" id="hood-v-9" value="127" min="0" style="text-align:center">
+      <button class="del-btn" onclick="removeHood(9)">✕</button>
+    </div>
+  </div>
       <button onclick="addHood()" style="padding:7px 14px;border:2px dashed var(--cyan);border-radius:16px;background:rgba(96,196,228,.06);color:var(--primary);font-family:inherit;font-size:12px;font-weight:700;cursor:pointer;margin-top:6px">＋ إضافة حي</button>
 
       <br><br>
@@ -634,14 +1065,241 @@ body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:var(--off);color:
     <div class="ctrl-head"><span style="font-size:20px">📊</span><h3>تعديل مؤشرات الأداء (KPI)</h3></div>
     <div class="ctrl-body">
       <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px">
-        <div id="kpi-ctrl-yr-toggle" class="yr-toggle" style="margin-bottom:0"></div>
+        <div id="kpi-ctrl-yr-toggle" class="yr-toggle" style="margin-bottom:0"><div style="display:inline-flex;align-items:center;gap:0;background:var(--primary);border-radius:20px;box-shadow:0 2px 8px rgba(50,51,102,.3)">
+        <button class="yr-btn active" onclick="selectCtrlKpiYear(2025)" style="background:transparent;color:#fff;padding-left:6px">2025</button>
+        <button onclick="deleteKpiYear(2025)" title="حذف عام 2025" style="background:none;border:none;cursor:pointer;font-size:12px;padding:0 8px 0 2px;color:rgba(255,255,255,.7);line-height:1;transition:color .18s" onmouseover="this.style.color='var(--danger)'" onmouseout="this.style.color='rgba(255,255,255,.7)'">✕</button>
+      </div></div>
         <button onclick="openAddKpiYearModal()" style="padding:7px 14px;border:2px dashed var(--cyan);border-radius:20px;background:rgba(96,196,228,.06);color:var(--primary);font-family:inherit;font-size:12px;font-weight:700;cursor:pointer">＋ إضافة عام مؤشرات</button>
       </div>
       <p style="font-size:12px;color:var(--tl);margin-bottom:14px">عدّل قيمة المحقق لأي مؤشر وسيُحسب التحقق تلقائياً.</p>
       <div style="overflow-x:auto">
         <table class="kpi-et">
           <thead><tr><th>الكود</th><th>المؤشر</th><th>المحور</th><th>الهدف</th><th>المحقق</th><th>%</th><th></th></tr></thead>
-          <tbody id="kpi-edit-body"></tbody>
+          <tbody id="kpi-edit-body"><tr>
+      <td><strong>(ع1-1)</strong></td>
+      <td style="min-width:160px;font-size:11px;line-height:1.4">دارسو البرامج التعليمية — ذكور</td>
+      <td><span class="cat-bdg edu">تعليمي</span></td>
+      <td style="text-align:center">1,519</td>
+      <td><input type="number" id="kpi-a-0" value="1560" min="0" onchange="recalcKpi(0)"></td>
+      <td><strong id="kpi-p-0" style="color:var(--success)">102.7%</strong></td>
+      <td><button onclick="deleteKpi(0)" class="del-btn" title="حذف">✕</button></td>
+    </tr><tr>
+      <td><strong>(ع1-2)</strong></td>
+      <td style="min-width:160px;font-size:11px;line-height:1.4">دارسو البرامج التعليمية — إناث</td>
+      <td><span class="cat-bdg edu">تعليمي</span></td>
+      <td style="text-align:center">1,977</td>
+      <td><input type="number" id="kpi-a-1" value="1980" min="0" onchange="recalcKpi(1)"></td>
+      <td><strong id="kpi-p-1" style="color:var(--success)">100.2%</strong></td>
+      <td><button onclick="deleteKpi(1)" class="del-btn" title="حذف">✕</button></td>
+    </tr><tr>
+      <td><strong>(ع1-3)</strong></td>
+      <td style="min-width:160px;font-size:11px;line-height:1.4">دارسو البرامج الإلكترونية</td>
+      <td><span class="cat-bdg edu">تعليمي</span></td>
+      <td style="text-align:center">175</td>
+      <td><input type="number" id="kpi-a-2" value="172" min="0" onchange="recalcKpi(2)"></td>
+      <td><strong id="kpi-p-2" style="color:var(--primary)">98.4%</strong></td>
+      <td><button onclick="deleteKpi(2)" class="del-btn" title="حذف">✕</button></td>
+    </tr><tr>
+      <td><strong>(ع1-4)</strong></td>
+      <td style="min-width:160px;font-size:11px;line-height:1.4">الدارسون في البرامج المجتمعية</td>
+      <td><span class="cat-bdg edu">تعليمي</span></td>
+      <td style="text-align:center">398</td>
+      <td><input type="number" id="kpi-a-3" value="399" min="0" onchange="recalcKpi(3)"></td>
+      <td><strong id="kpi-p-3" style="color:var(--success)">100.3%</strong></td>
+      <td><button onclick="deleteKpi(3)" class="del-btn" title="حذف">✕</button></td>
+    </tr><tr>
+      <td><strong>(ع1-5)</strong></td>
+      <td style="min-width:160px;font-size:11px;line-height:1.4">عدد برامج الجمعية المقدمة للمجتمع</td>
+      <td><span class="cat-bdg edu">تعليمي</span></td>
+      <td style="text-align:center">18</td>
+      <td><input type="number" id="kpi-a-4" value="22" min="0" onchange="recalcKpi(4)"></td>
+      <td><strong id="kpi-p-4" style="color:var(--success)">119.6%</strong></td>
+      <td><button onclick="deleteKpi(4)" class="del-btn" title="حذف">✕</button></td>
+    </tr><tr>
+      <td><strong>(ع1-6)</strong></td>
+      <td style="min-width:160px;font-size:11px;line-height:1.4">المستفيدون من برامج الجمعية</td>
+      <td><span class="cat-bdg edu">تعليمي</span></td>
+      <td style="text-align:center">2,818</td>
+      <td><input type="number" id="kpi-a-5" value="2820" min="0" onchange="recalcKpi(5)"></td>
+      <td><strong id="kpi-p-5" style="color:var(--success)">100.1%</strong></td>
+      <td><button onclick="deleteKpi(5)" class="del-btn" title="حذف">✕</button></td>
+    </tr><tr>
+      <td><strong>(ع2-1)</strong></td>
+      <td style="min-width:160px;font-size:11px;line-height:1.4">نسبة النجاح في طلاب الجمعية</td>
+      <td><span class="cat-bdg edu">تعليمي</span></td>
+      <td style="text-align:center">95</td>
+      <td><input type="number" id="kpi-a-6" value="88.75" min="0" onchange="recalcKpi(6)"></td>
+      <td><strong id="kpi-p-6" style="color:var(--primary)">93.4%</strong></td>
+      <td><button onclick="deleteKpi(6)" class="del-btn" title="حذف">✕</button></td>
+    </tr><tr>
+      <td><strong>(ع2-2)</strong></td>
+      <td style="min-width:160px;font-size:11px;line-height:1.4">الحفظة الذين اجتازوا الاختبار الختامي</td>
+      <td><span class="cat-bdg edu">تعليمي</span></td>
+      <td style="text-align:center">36</td>
+      <td><input type="number" id="kpi-a-7" value="64" min="0" onchange="recalcKpi(7)"></td>
+      <td><strong id="kpi-p-7" style="color:var(--success)">177.8%</strong></td>
+      <td><button onclick="deleteKpi(7)" class="del-btn" title="حذف">✕</button></td>
+    </tr><tr>
+      <td><strong>(ع2-4)</strong></td>
+      <td style="min-width:160px;font-size:11px;line-height:1.4">الأجزاء المحفوظة خلال العام</td>
+      <td><span class="cat-bdg edu">تعليمي</span></td>
+      <td style="text-align:center">7,000</td>
+      <td><input type="number" id="kpi-a-8" value="7500" min="0" onchange="recalcKpi(8)"></td>
+      <td><strong id="kpi-p-8" style="color:var(--success)">107.1%</strong></td>
+      <td><button onclick="deleteKpi(8)" class="del-btn" title="حذف">✕</button></td>
+    </tr><tr>
+      <td><strong>(ع3-1)</strong></td>
+      <td style="min-width:160px;font-size:11px;line-height:1.4">نسبة رضا المستفيدين عن البرامج التعليمية</td>
+      <td><span class="cat-bdg edu">تعليمي</span></td>
+      <td style="text-align:center">95</td>
+      <td><input type="number" id="kpi-a-9" value="97.25" min="0" onchange="recalcKpi(9)"></td>
+      <td><strong id="kpi-p-9" style="color:var(--success)">102.4%</strong></td>
+      <td><button onclick="deleteKpi(9)" class="del-btn" title="حذف">✕</button></td>
+    </tr><tr>
+      <td><strong>(ع3-2)</strong></td>
+      <td style="min-width:160px;font-size:11px;line-height:1.4">المستفيدون من الزيارات الميدانية</td>
+      <td><span class="cat-bdg edu">تعليمي</span></td>
+      <td style="text-align:center">437</td>
+      <td><input type="number" id="kpi-a-10" value="500" min="0" onchange="recalcKpi(10)"></td>
+      <td><strong id="kpi-p-10" style="color:var(--success)">114.4%</strong></td>
+      <td><button onclick="deleteKpi(10)" class="del-btn" title="حذف">✕</button></td>
+    </tr><tr>
+      <td><strong>(ع3-3)</strong></td>
+      <td style="min-width:160px;font-size:11px;line-height:1.4">نسبة الزيادة في اللقاءات مع أولياء الأمور</td>
+      <td><span class="cat-bdg edu">تعليمي</span></td>
+      <td style="text-align:center">23</td>
+      <td><input type="number" id="kpi-a-11" value="24" min="0" onchange="recalcKpi(11)"></td>
+      <td><strong id="kpi-p-11" style="color:var(--success)">104.3%</strong></td>
+      <td><button onclick="deleteKpi(11)" class="del-btn" title="حذف">✕</button></td>
+    </tr><tr>
+      <td><strong>(ع4-1)</strong></td>
+      <td style="min-width:160px;font-size:11px;line-height:1.4">أساليب وطرق التعلم الفاعلة المستخدمة</td>
+      <td><span class="cat-bdg edu">تعليمي</span></td>
+      <td style="text-align:center">14</td>
+      <td><input type="number" id="kpi-a-12" value="16" min="0" onchange="recalcKpi(12)"></td>
+      <td><strong id="kpi-p-12" style="color:var(--success)">115.9%</strong></td>
+      <td><button onclick="deleteKpi(12)" class="del-btn" title="حذف">✕</button></td>
+    </tr><tr>
+      <td><strong>(ع4-2)</strong></td>
+      <td style="min-width:160px;font-size:11px;line-height:1.4">الأساليب التعليمية المستحدثة</td>
+      <td><span class="cat-bdg edu">تعليمي</span></td>
+      <td style="text-align:center">8</td>
+      <td><input type="number" id="kpi-a-13" value="8" min="0" onchange="recalcKpi(13)"></td>
+      <td><strong id="kpi-p-13" style="color:var(--success)">100%</strong></td>
+      <td><button onclick="deleteKpi(13)" class="del-btn" title="حذف">✕</button></td>
+    </tr><tr>
+      <td><strong>(د1-2)</strong></td>
+      <td style="min-width:160px;font-size:11px;line-height:1.4">نسبة أتمتة العمليات والأنظمة التعليمية</td>
+      <td><span class="cat-bdg ops">تشغيلي</span></td>
+      <td style="text-align:center">3</td>
+      <td><input type="number" id="kpi-a-14" value="3" min="0" onchange="recalcKpi(14)"></td>
+      <td><strong id="kpi-p-14" style="color:var(--success)">100%</strong></td>
+      <td><button onclick="deleteKpi(14)" class="del-btn" title="حذف">✕</button></td>
+    </tr><tr>
+      <td><strong>(د1-3)</strong></td>
+      <td style="min-width:160px;font-size:11px;line-height:1.4">اللوائح والأنظمة التي تم تحديثها</td>
+      <td><span class="cat-bdg ops">تشغيلي</span></td>
+      <td style="text-align:center">3</td>
+      <td><input type="number" id="kpi-a-15" value="3" min="0" onchange="recalcKpi(15)"></td>
+      <td><strong id="kpi-p-15" style="color:var(--success)">100%</strong></td>
+      <td><button onclick="deleteKpi(15)" class="del-btn" title="حذف">✕</button></td>
+    </tr><tr>
+      <td><strong>(د2-3)</strong></td>
+      <td style="min-width:160px;font-size:11px;line-height:1.4">العمليات التي تم تحسينها</td>
+      <td><span class="cat-bdg ops">تشغيلي</span></td>
+      <td style="text-align:center">4</td>
+      <td><input type="number" id="kpi-a-16" value="4" min="0" onchange="recalcKpi(16)"></td>
+      <td><strong id="kpi-p-16" style="color:var(--success)">100%</strong></td>
+      <td><button onclick="deleteKpi(16)" class="del-btn" title="حذف">✕</button></td>
+    </tr><tr>
+      <td><strong>(د3-1)</strong></td>
+      <td style="min-width:160px;font-size:11px;line-height:1.4">نسبة الزيادة في عدد المتطوعين</td>
+      <td><span class="cat-bdg ops">تشغيلي</span></td>
+      <td style="text-align:center">85</td>
+      <td><input type="number" id="kpi-a-17" value="100" min="0" onchange="recalcKpi(17)"></td>
+      <td><strong id="kpi-p-17" style="color:var(--success)">117.5%</strong></td>
+      <td><button onclick="deleteKpi(17)" class="del-btn" title="حذف">✕</button></td>
+    </tr><tr>
+      <td><strong>(د3-2)</strong></td>
+      <td style="min-width:160px;font-size:11px;line-height:1.4">نسبة رضا المتطوعين</td>
+      <td><span class="cat-bdg ops">تشغيلي</span></td>
+      <td style="text-align:center">98</td>
+      <td><input type="number" id="kpi-a-18" value="98" min="0" onchange="recalcKpi(18)"></td>
+      <td><strong id="kpi-p-18" style="color:var(--success)">100%</strong></td>
+      <td><button onclick="deleteKpi(18)" class="del-btn" title="حذف">✕</button></td>
+    </tr><tr>
+      <td><strong>(د4-2)</strong></td>
+      <td style="min-width:160px;font-size:11px;line-height:1.4">عدد المناسبات الاجتماعية</td>
+      <td><span class="cat-bdg ops">تشغيلي</span></td>
+      <td style="text-align:center">3</td>
+      <td><input type="number" id="kpi-a-19" value="4" min="0" onchange="recalcKpi(19)"></td>
+      <td><strong id="kpi-p-19" style="color:var(--success)">133.3%</strong></td>
+      <td><button onclick="deleteKpi(19)" class="del-btn" title="حذف">✕</button></td>
+    </tr><tr>
+      <td><strong>(د4-3)</strong></td>
+      <td style="min-width:160px;font-size:11px;line-height:1.4">البيئات والخدمات المحسّنة</td>
+      <td><span class="cat-bdg ops">تشغيلي</span></td>
+      <td style="text-align:center">11</td>
+      <td><input type="number" id="kpi-a-20" value="11" min="0" onchange="recalcKpi(20)"></td>
+      <td><strong id="kpi-p-20" style="color:var(--success)">100%</strong></td>
+      <td><button onclick="deleteKpi(20)" class="del-btn" title="حذف">✕</button></td>
+    </tr><tr>
+      <td><strong>(م2-1)</strong></td>
+      <td style="min-width:160px;font-size:11px;line-height:1.4">نسبة الزيادة في الموارد المالية الثابتة</td>
+      <td><span class="cat-bdg fin">مالي</span></td>
+      <td style="text-align:center">4,000,000</td>
+      <td><input type="number" id="kpi-a-21" value="3092493" min="0" onchange="recalcKpi(21)"></td>
+      <td><strong id="kpi-p-21" style="color:var(--warn)">77.3%</strong></td>
+      <td><button onclick="deleteKpi(21)" class="del-btn" title="حذف">✕</button></td>
+    </tr><tr>
+      <td><strong>(م2-2)</strong></td>
+      <td style="min-width:160px;font-size:11px;line-height:1.4">الزيادة في إيرادات الخدمات</td>
+      <td><span class="cat-bdg fin">مالي</span></td>
+      <td style="text-align:center">650,000</td>
+      <td><input type="number" id="kpi-a-22" value="550137" min="0" onchange="recalcKpi(22)"></td>
+      <td><strong id="kpi-p-22" style="color:var(--warn)">84.6%</strong></td>
+      <td><button onclick="deleteKpi(22)" class="del-btn" title="حذف">✕</button></td>
+    </tr><tr>
+      <td><strong>(م3-1)</strong></td>
+      <td style="min-width:160px;font-size:11px;line-height:1.4">الشراكات المبرمة</td>
+      <td><span class="cat-bdg fin">مالي</span></td>
+      <td style="text-align:center">8</td>
+      <td><input type="number" id="kpi-a-23" value="9" min="0" onchange="recalcKpi(23)"></td>
+      <td><strong id="kpi-p-23" style="color:var(--success)">111.8%</strong></td>
+      <td><button onclick="deleteKpi(23)" class="del-btn" title="حذف">✕</button></td>
+    </tr><tr>
+      <td><strong>(ن1-1)</strong></td>
+      <td style="min-width:160px;font-size:11px;line-height:1.4">ساعات التدريب للعاملين</td>
+      <td><span class="cat-bdg hr">بشري</span></td>
+      <td style="text-align:center">2</td>
+      <td><input type="number" id="kpi-a-24" value="2" min="0" onchange="recalcKpi(24)"></td>
+      <td><strong id="kpi-p-24" style="color:var(--success)">100%</strong></td>
+      <td><button onclick="deleteKpi(24)" class="del-btn" title="حذف">✕</button></td>
+    </tr><tr>
+      <td><strong>(ن1-2)</strong></td>
+      <td style="min-width:160px;font-size:11px;line-height:1.4">ساعات برامج المتطوعين</td>
+      <td><span class="cat-bdg hr">بشري</span></td>
+      <td style="text-align:center">75</td>
+      <td><input type="number" id="kpi-a-25" value="80" min="0" onchange="recalcKpi(25)"></td>
+      <td><strong id="kpi-p-25" style="color:var(--success)">107%</strong></td>
+      <td><button onclick="deleteKpi(25)" class="del-btn" title="حذف">✕</button></td>
+    </tr><tr>
+      <td><strong>(ن2-1)</strong></td>
+      <td style="min-width:160px;font-size:11px;line-height:1.4">اللقاءات والبرامج لتحقيق الرضا الوظيفي</td>
+      <td><span class="cat-bdg hr">بشري</span></td>
+      <td style="text-align:center">22</td>
+      <td><input type="number" id="kpi-a-26" value="22" min="0" onchange="recalcKpi(26)"></td>
+      <td><strong id="kpi-p-26" style="color:var(--success)">100.7%</strong></td>
+      <td><button onclick="deleteKpi(26)" class="del-btn" title="حذف">✕</button></td>
+    </tr><tr>
+      <td><strong>(ن2-2)</strong></td>
+      <td style="min-width:160px;font-size:11px;line-height:1.4">الرسائل البريدية المتضمنة للأداء</td>
+      <td><span class="cat-bdg hr">بشري</span></td>
+      <td style="text-align:center">3</td>
+      <td><input type="number" id="kpi-a-27" value="1" min="0" onchange="recalcKpi(27)"></td>
+      <td><strong id="kpi-p-27" style="color:var(--danger)">33.3%</strong></td>
+      <td><button onclick="deleteKpi(27)" class="del-btn" title="حذف">✕</button></td>
+    </tr></tbody>
         </table>
       </div>
       <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap">
@@ -653,7 +1311,7 @@ body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:var(--off);color:
 
   <!-- إدارة المساجد -->
   <div class="ctrl-sec">
-    <div class="ctrl-head"><span style="font-size:20px">🕌</span><h3>إدارة بيانات المساجد — <span id="ctrl-mosque-year-label">—</span></h3></div>
+    <div class="ctrl-head"><span style="font-size:20px">🕌</span><h3>إدارة بيانات المساجد — <span id="ctrl-mosque-year-label">عام 2025</span></h3></div>
     <div class="ctrl-body">
       <p style="font-size:12px;color:var(--tl);margin-bottom:14px">البيانات مرتبطة بالسنة المحددة في الأعلى. أضف أو عدّل أو احذف المساجد.</p>
       <div style="overflow-x:auto;margin-bottom:12px">
@@ -669,11 +1327,1218 @@ body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:var(--off);color:
               <th></th>
             </tr>
           </thead>
-          <tbody id="mosque-ctrl-body"></tbody>
+          <tbody id="mosque-ctrl-body">
+    <tr id="mosque-row-0">
+      <td><input class="hood-inp" type="text" id="m-name-0" value="هيلة الغنام" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-0" value="الحمرا" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-0" value="1" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-0" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-0" value="14" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-0" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(0)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-1">
+      <td><input class="hood-inp" type="text" id="m-name-1" value="ناصر خباب القحطاني" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-1" value="الخزامي" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-1" value="1" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-1" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-1" value="10" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-1" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(1)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-2">
+      <td><input class="hood-inp" type="text" id="m-name-2" value="عبدالله بن رواحة" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-2" value="م العمال" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-2" value="5" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-2" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-2" value="49" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-2" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(2)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-3">
+      <td><input class="hood-inp" type="text" id="m-name-3" value="الخريجي" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-3" value="البندرية" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-3" value="5" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-3" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-3" value="62" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-3" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(3)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-4">
+      <td><input class="hood-inp" type="text" id="m-name-4" value="قوى الأمن" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-4" value="الظهران" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-4" value="5" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-4" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-4" value="65" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-4" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(4)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-5">
+      <td><input class="hood-inp" type="text" id="m-name-5" value="فاطمة النعيمي" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-5" value="الراكة" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-5" value="1" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-5" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-5" value="22" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-5" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(5)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-6">
+      <td><input class="hood-inp" type="text" id="m-name-6" value="المعالي" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-6" value="البحر" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-6" value="2" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-6" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-6" value="26" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-6" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(6)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-7">
+      <td><input class="hood-inp" type="text" id="m-name-7" value="منيرة السهلي" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-7" value="العزيزية" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-7" value="5" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-7" value="3" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-7" value="56" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-7" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(7)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-8">
+      <td><input class="hood-inp" type="text" id="m-name-8" value="لؤلؤة التويجري" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-8" value="العزيزية" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-8" value="3" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-8" value="3" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-8" value="45" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-8" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(8)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-9">
+      <td><input class="hood-inp" type="text" id="m-name-9" value="بابيضان" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-9" value="خ الشمالية" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-9" value="5" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-9" value="3" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-9" value="70" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-9" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(9)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-10">
+      <td><input class="hood-inp" type="text" id="m-name-10" value="قماشة المجحد" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-10" value="أجيال" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-10" value="4" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-10" value="3" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-10" value="55" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-10" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(10)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-11">
+      <td><input class="hood-inp" type="text" id="m-name-11" value="الذاكرين" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-11" value="البحر" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-11" value="1" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-11" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-11" value="10" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-11" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(11)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-12">
+      <td><input class="hood-inp" type="text" id="m-name-12" value="منيرة الخالدي" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-12" value="العزيزية" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-12" value="2" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-12" value="2" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-12" value="35" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-12" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(12)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-13">
+      <td><input class="hood-inp" type="text" id="m-name-13" value="صالح الحربي" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-13" value="اجبال" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-13" value="2" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-13" value="2" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-13" value="29" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-13" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(13)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-14">
+      <td><input class="hood-inp" type="text" id="m-name-14" value="ابن عثيمين" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-14" value="الثقبة" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-14" value="3" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-14" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-14" value="75" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-14" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(14)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-15">
+      <td><input class="hood-inp" type="text" id="m-name-15" value="التقوي" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-15" value="الثقبة" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-15" value="2" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-15" value="2" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-15" value="22" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-15" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(15)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-16">
+      <td><input class="hood-inp" type="text" id="m-name-16" value="الحسين بن علي" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-16" value="الثقبة" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-16" value="4" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-16" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-16" value="39" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-16" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(16)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-17">
+      <td><input class="hood-inp" type="text" id="m-name-17" value="الفاروق" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-17" value="خ الشمالية" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-17" value="7" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-17" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-17" value="95" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-17" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(17)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-18">
+      <td><input class="hood-inp" type="text" id="m-name-18" value="المدينة المنورة" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-18" value="البايونية" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-18" value="1" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-18" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-18" value="12" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-18" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(18)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-19">
+      <td><input class="hood-inp" type="text" id="m-name-19" value="الهداية" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-19" value="خ الشمالية" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-19" value="4" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-19" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-19" value="42" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-19" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(19)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-20">
+      <td><input class="hood-inp" type="text" id="m-name-20" value="أبو عبيدة" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-20" value="الثقبة" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-20" value="2" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-20" value="2" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-20" value="49" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-20" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(20)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-21">
+      <td><input class="hood-inp" type="text" id="m-name-21" value="عمر بن عبدالعزيز" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-21" value="العقربية" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-21" value="6" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-21" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-21" value="90" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-21" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(21)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-22">
+      <td><input class="hood-inp" type="text" id="m-name-22" value="باطوق" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-22" value="البايونية" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-22" value="1" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-22" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-22" value="7" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-22" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(22)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-23">
+      <td><input class="hood-inp" type="text" id="m-name-23" value="بلال بن رباح" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-23" value="خ الشمالية" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-23" value="2" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-23" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-23" value="35" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-23" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(23)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-24">
+      <td><input class="hood-inp" type="text" id="m-name-24" value="جعفر بن أبي طالب" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-24" value="خ الشمالية" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-24" value="3" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-24" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-24" value="65" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-24" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(24)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-25">
+      <td><input class="hood-inp" type="text" id="m-name-25" value="خباب بن الأرت" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-25" value="خ الشمالية" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-25" value="2" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-25" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-25" value="37" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-25" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(25)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-26">
+      <td><input class="hood-inp" type="text" id="m-name-26" value="السلام" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-26" value="اللؤلؤ" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-26" value="1" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-26" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-26" value="25" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-26" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(26)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-27">
+      <td><input class="hood-inp" type="text" id="m-name-27" value="المانع" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-27" value="الحزام" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-27" value="2" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-27" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-27" value="30" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-27" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(27)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-28">
+      <td><input class="hood-inp" type="text" id="m-name-28" value="الطفيل" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-28" value="الدوحة" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-28" value="1" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-28" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-28" value="18" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-28" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(28)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-29">
+      <td><input class="hood-inp" type="text" id="m-name-29" value="أم زايد" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-29" value="الدوحة" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-29" value="3" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-29" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-29" value="31" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-29" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(29)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-30">
+      <td><input class="hood-inp" type="text" id="m-name-30" value="حمزة بن عبدالمطلب" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-30" value="الدوحة" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-30" value="1" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-30" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-30" value="15" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-30" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(30)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-31">
+      <td><input class="hood-inp" type="text" id="m-name-31" value="عبداللطيف الجلال" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-31" value="النورس" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-31" value="6" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-31" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-31" value="54" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-31" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(31)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-32">
+      <td><input class="hood-inp" type="text" id="m-name-32" value="محمد بن عبدالوهاب" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-32" value="الجامعة" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-32" value="3" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-32" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-32" value="41" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-32" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(32)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-33">
+      <td><input class="hood-inp" type="text" id="m-name-33" value="صالح أبو عدلة الغامدي" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-33" value="الدوحة" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-33" value="1" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-33" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-33" value="16" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-33" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(33)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-34">
+      <td><input class="hood-inp" type="text" id="m-name-34" value="سنابل الخير" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-34" value="م العمال" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-34" value="8" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-34" value="3" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-34" value="119" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-34" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(34)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-35">
+      <td><input class="hood-inp" type="text" id="m-name-35" value="عائشة أم المؤمنين" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-35" value="الجسر" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-35" value="6" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-35" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-35" value="75" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-35" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(35)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-36">
+      <td><input class="hood-inp" type="text" id="m-name-36" value="عبدالهادي القحطاني" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-36" value="الخزامى" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-36" value="6" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-36" value="3" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-36" value="84" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-36" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(36)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-37">
+      <td><input class="hood-inp" type="text" id="m-name-37" value="عمر بن الخطاب" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-37" value="التحلية" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-37" value="5" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-37" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-37" value="48" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-37" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(37)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-38">
+      <td><input class="hood-inp" type="text" id="m-name-38" value="فايز الشهراني" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-38" value="العزيزية" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-38" value="1" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-38" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-38" value="20" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-38" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(38)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-39">
+      <td><input class="hood-inp" type="text" id="m-name-39" value="كلثم بنت علي" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-39" value="العزيزية" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-39" value="1" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-39" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-39" value="21" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-39" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(39)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-40">
+      <td><input class="hood-inp" type="text" id="m-name-40" value="حلقات السجن" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-40" value="الاسكان" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-40" value="5" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-40" value="2" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-40" value="500" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-40" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(40)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-41">
+      <td><input class="hood-inp" type="text" id="m-name-41" value="هلال السيحاني" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-41" value="" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-41" value="2" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-41" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-41" value="43" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-41" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(41)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-42">
+      <td><input class="hood-inp" type="text" id="m-name-42" value="سعد بن معاذ" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-42" value="الراكة" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-42" value="1" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-42" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-42" value="14" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-42" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(42)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-43">
+      <td><input class="hood-inp" type="text" id="m-name-43" value="إبراهيم العجمي" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-43" value="العليا" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-43" value="3" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-43" value="2" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-43" value="56" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-43" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(43)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-44">
+      <td><input class="hood-inp" type="text" id="m-name-44" value="أنس الصقير" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-44" value="الحزام" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-44" value="14" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-44" value="2" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-44" value="135" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-44" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(44)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-45">
+      <td><input class="hood-inp" type="text" id="m-name-45" value="أنس بن مالك" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-45" value="العربية" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-45" value="10" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-45" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-45" value="110" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-45" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(45)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-46">
+      <td><input class="hood-inp" type="text" id="m-name-46" value="زين العابدين" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-46" value="م العمال" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-46" value="5" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-46" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-46" value="63" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-46" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(46)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-47">
+      <td><input class="hood-inp" type="text" id="m-name-47" value="مصعب بن عمير" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-47" value="خ الشمالية" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-47" value="9" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-47" value="3" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-47" value="145" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-47" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(47)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-48">
+      <td><input class="hood-inp" type="text" id="m-name-48" value="عيظه الحارثي" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-48" value="الحمرا" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-48" value="1" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-48" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-48" value="24" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-48" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(48)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-49">
+      <td><input class="hood-inp" type="text" id="m-name-49" value="عثمان بن عفان" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-49" value="خ الشمالية" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-49" value="8" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-49" value="3" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-49" value="67" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-49" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(49)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-50">
+      <td><input class="hood-inp" type="text" id="m-name-50" value="خالد العمار" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-50" value="البحيرة" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-50" value="1" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-50" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-50" value="18" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-50" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(50)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-51">
+      <td><input class="hood-inp" type="text" id="m-name-51" value="خادم الحرمين" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-51" value="الإسكان" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-51" value="22" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-51" value="3" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-51" value="309" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-51" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(51)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-52">
+      <td><input class="hood-inp" type="text" id="m-name-52" value="فاطمة الدوسري" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-52" value="العليا" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-52" value="5" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-52" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-52" value="66" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-52" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(52)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-53">
+      <td><input class="hood-inp" type="text" id="m-name-53" value="التقوى التميمي" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-53" value="الحزام" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-53" value="17" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-53" value="3" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-53" value="261" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-53" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(53)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-54">
+      <td><input class="hood-inp" type="text" id="m-name-54" value="الأندلس" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-54" value="م العمال" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-54" value="4" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-54" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-54" value="55" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-54" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(54)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-55">
+      <td><input class="hood-inp" type="text" id="m-name-55" value="العنود" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-55" value="العقربية" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-55" value="1" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-55" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-55" value="15" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-55" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(55)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-56">
+      <td><input class="hood-inp" type="text" id="m-name-56" value="أحمد بن حنبل" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-56" value="البندرية" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-56" value="4" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-56" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-56" value="82" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-56" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(56)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-57">
+      <td><input class="hood-inp" type="text" id="m-name-57" value="عبدالله المهوس" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-57" value="خ الشمالية" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-57" value="7" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-57" value="3" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-57" value="153" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-57" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(57)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-58">
+      <td><input class="hood-inp" type="text" id="m-name-58" value="سارة الرزيزا" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-58" value="الهدا" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-58" value="7" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-58" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-58" value="80" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-58" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(58)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-59">
+      <td><input class="hood-inp" type="text" id="m-name-59" value="عبدالله الصعب" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-59" value="العزيزية" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-59" value="1" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-59" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-59" value="28" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-59" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(59)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-60">
+      <td><input class="hood-inp" type="text" id="m-name-60" value="ماهر الجابر" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-60" value="العزيزية" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-60" value="1" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-60" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-60" value="10" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-60" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(60)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-61">
+      <td><input class="hood-inp" type="text" id="m-name-61" value="عبدالعظيم البسام" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-61" value="الامواج" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-61" value="1" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-61" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-61" value="15" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-61" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(61)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-62">
+      <td><input class="hood-inp" type="text" id="m-name-62" value="جامع العويضة" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-62" value="القصور" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-62" value="3" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-62" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-62" value="45" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-62" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(62)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-63">
+      <td><input class="hood-inp" type="text" id="m-name-63" value="مسجد ابوبكر الصديق" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-63" value="الراكة" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-63" value="1" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-63" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-63" value="11" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-63" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(63)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-64">
+      <td><input class="hood-inp" type="text" id="m-name-64" value="هيا الشايب" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-64" value="الحزام الاخضر" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-64" value="1" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-64" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-64" value="14" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-64" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(64)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-65">
+      <td><input class="hood-inp" type="text" id="m-name-65" value="أسامة بن زيد" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-65" value="العقربية" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-65" value="1" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-65" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-65" value="10" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-65" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(65)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-66">
+      <td><input class="hood-inp" type="text" id="m-name-66" value="بر الوالدين" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-66" value="الراكه" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-66" value="1" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-66" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-66" value="9" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-66" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(66)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-67">
+      <td><input class="hood-inp" type="text" id="m-name-67" value="مسجد الأمة" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-67" value="الثقبة" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-67" value="1" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-67" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-67" value="17" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-67" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(67)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-68">
+      <td><input class="hood-inp" type="text" id="m-name-68" value="جامعة الامام" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-68" value="الجامعة" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-68" value="3" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-68" value="3" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-68" value="50" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-68" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(68)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-69">
+      <td><input class="hood-inp" type="text" id="m-name-69" value="جامع مكه" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-69" value="العقربية" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-69" value="1" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-69" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-69" value="17" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-69" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(69)">✕</button></td>
+    </tr>
+  
+    <tr id="mosque-row-70">
+      <td><input class="hood-inp" type="text" id="m-name-70" value="والدةابراهيم المجدوعي" placeholder="اسم المسجد" style="min-width:140px"></td>
+      <td><input class="hood-inp" type="text" id="m-hood-70" value="البستان" placeholder="الحي" style="min-width:100px"></td>
+      <td><input class="hood-inp" type="number" id="m-halaq-70" value="1" min="0" style="width:60px;text-align:center"></td>
+      <td><input class="hood-inp" type="number" id="m-periods-70" value="1" min="1" max="3" style="width:60px;text-align:center" title="عدد الفترات"></td>
+      <td><input class="hood-inp" type="number" id="m-students-70" value="6" min="0" style="width:70px;text-align:center"></td>
+      <td>
+        <select id="m-status-70" style="padding:6px 8px;border:1.5px solid var(--border);border-radius:var(--rs);font-family:inherit;font-size:12px;outline:none">
+          <option value="active" selected="">مدعوم</option>
+          <option value="inactive">غير مدعوم</option>
+          <option value="stopped">متوقف</option>
+        </select>
+      </td>
+      <td><button class="del-btn" onclick="deleteMosqueRow(70)">✕</button></td>
+    </tr>
+  </tbody>
         </table>
       </div>
       <button onclick="addMosqueRow()" style="padding:8px 18px;border:2px dashed var(--cyan);border-radius:var(--rs);background:rgba(96,196,228,.06);color:var(--primary);font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;margin-left:10px">＋ إضافة مسجد</button>
       <button class="ctrl-save" onclick="saveMosques()" style="margin-top:0">💾 حفظ بيانات المساجد</button>
+    </div>
+  </div>
+
+  <!-- نشر على GitHub Pages -->
+  <div class="ctrl-sec">
+    <div class="ctrl-head" style="background:linear-gradient(135deg,#1a1a2e,#24292f)">
+      <span style="font-size:20px">🚀</span>
+      <h3>نشر على GitHub Pages</h3>
+    </div>
+    <div class="ctrl-body">
+
+      <!-- الطريقة البسيطة -->
+      <div style="background:var(--off);border-radius:var(--r);padding:18px;border:1px solid var(--border);margin-bottom:16px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+          <span style="font-size:22px">⬇️</span>
+          <div>
+            <div style="font-size:14px;font-weight:700;color:var(--primary)">الطريقة البسيطة</div>
+            <div style="font-size:11px;color:var(--tl)">حمّل الملف ثم ارفعه يدوياً على GitHub</div>
+          </div>
+        </div>
+        <p style="font-size:12px;color:var(--tl);margin-bottom:12px;line-height:1.7">
+          يحمّل الملف مع جميع البيانات الحالية جاهزاً للرفع — ثم تفتح مستودعك على GitHub وتسحبه أو ترفعه من خلال الموقع.
+        </p>
+        <button onclick="downloadPortalFile()" class="ctrl-save">⬇️ تحميل الملف جاهزاً للرفع</button>
+      </div>
+
+      <!-- الطريقة التلقائية -->
+      <div style="background:var(--off);border-radius:var(--r);padding:18px;border:1px solid var(--border)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+          <span style="font-size:22px">🤖</span>
+          <div>
+            <div style="font-size:14px;font-weight:700;color:var(--primary)">الطريقة التلقائية</div>
+            <div style="font-size:11px;color:var(--tl)">رفع مباشر لـ GitHub بدون تدخل يدوي</div>
+          </div>
+        </div>
+        <p style="font-size:12px;color:var(--tl);margin-bottom:14px;line-height:1.7">
+          يرفع الملف مباشرة إلى مستودعك. يحتاج إعداداً لمرة واحدة فقط — تُحفظ الإعدادات تلقائياً.
+        </p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
+          <div class="ctrl-field">
+            <label>اسم المستخدم على GitHub</label>
+            <input type="text" id="gh-owner" class="fi" placeholder="مثال: ahmad" style="direction:ltr">
+          </div>
+          <div class="ctrl-field">
+            <label>اسم المستودع</label>
+            <input type="text" id="gh-repo" class="fi" placeholder="مثال: khobar-portal" style="direction:ltr">
+          </div>
+          <div class="ctrl-field">
+            <label>اسم الملف</label>
+            <input type="text" id="gh-filename" class="fi" value="portal.html" style="direction:ltr">
+          </div>
+          <div class="ctrl-field">
+            <label>الفرع</label>
+            <input type="text" id="gh-branch" class="fi" value="main" style="direction:ltr">
+          </div>
+        </div>
+        <div class="ctrl-field" style="margin-bottom:14px">
+          <label>GitHub Token <span style="color:var(--danger)">*</span></label>
+          <input type="password" id="gh-token" class="fi" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" style="direction:ltr;font-family:monospace">
+          <p style="font-size:11px;color:var(--tl);margin-top:4px">
+            يُحفظ في متصفحك فقط — لا يُرسل لأي مكان غير GitHub مباشرةً
+          </p>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+          <button onclick="deployToGitHub()" id="gh-deploy-btn" style="padding:11px 28px;background:linear-gradient(135deg,#1a1a2e,#24292f);color:#fff;border:none;border-radius:var(--rs);font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:opacity .18s;display:inline-flex;align-items:center;gap:8px" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+            🚀 رفع الآن
+          </button>
+          <span id="gh-status" style="font-size:13px;font-weight:700"></span>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -688,6 +2553,23 @@ body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:var(--off);color:
       </div>
       <p id="pin-change-msg" style="font-size:12px;font-weight:700;min-height:18px;margin-top:8px"></p>
       <button class="ctrl-save" onclick="changePin()" style="margin-top:4px">🔑 تغيير الرقم السري</button>
+    </div>
+  </div>
+
+  <!-- حذف جميع البيانات -->
+  <div class="ctrl-sec" style="border-color:rgba(192,57,43,.3)">
+    <div class="ctrl-head" style="background:linear-gradient(135deg,#922b21,#c0392b)">
+      <span style="font-size:20px">🗑️</span>
+      <h3>حذف جميع البيانات المحفوظة</h3>
+    </div>
+    <div class="ctrl-body">
+      <div class="info-box" style="border-color:rgba(192,57,43,.3);background:rgba(192,57,43,.05);color:#922b21;margin-bottom:16px">
+        <span>⚠️</span>
+        <span>يحذف جميع البيانات المحفوظة في المتصفح (سنوات، مؤشرات، مساجد). البيانات الافتراضية ستُستعاد عند إعادة فتح الصفحة. لا يمكن التراجع.</span>
+      </div>
+      <button onclick="confirmClearAllData()" style="padding:11px 28px;background:linear-gradient(135deg,#922b21,#c0392b);color:#fff;border:none;border-radius:var(--rs);font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:opacity .18s;display:inline-flex;align-items:center;gap:8px" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+        🗑️ حذف جميع البيانات
+      </button>
     </div>
   </div>
 
@@ -854,14 +2736,13 @@ body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:var(--off);color:
     <div class="modal-body">
       <div class="fg">
         <label>رقم السنة <span>*</span></label>
-        <input class="fi" type="number" id="kpi-year-input" placeholder="مثال: 2026" min="1300" max="2100"
-          onkeydown="if(event.key==='Enter') confirmAddKpiYear()">
+        <input class="fi" type="number" id="kpi-year-input" placeholder="مثال: 2026" min="1300" max="2100" onkeydown="if(event.key==='Enter') confirmAddKpiYear()">
       </div>
       <div class="fg">
         <label>الأرباع المتاحة <span>*</span></label>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px">
           <label style="display:flex;align-items:center;gap:8px;padding:10px 14px;border:2px solid var(--border);border-radius:var(--rs);cursor:pointer;transition:all .18s;font-weight:600;font-size:13px" id="q1-lbl">
-            <input type="checkbox" id="kpi-q1" checked onchange="updateQLabel(1)" style="width:16px;height:16px;accent-color:var(--primary)">
+            <input type="checkbox" id="kpi-q1" checked="" onchange="updateQLabel(1)" style="width:16px;height:16px;accent-color:var(--primary)">
             الربع الأول
           </label>
           <label style="display:flex;align-items:center;gap:8px;padding:10px 14px;border:2px solid var(--border);border-radius:var(--rs);cursor:pointer;transition:all .18s;font-weight:600;font-size:13px" id="q2-lbl">
@@ -949,8 +2830,7 @@ body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:var(--off);color:
     <div class="modal-body">
       <div class="fg">
         <label>رقم السنة الميلادية أو الهجرية <span>*</span></label>
-        <input class="fi" type="number" id="new-year-input" placeholder="مثال: 2026 أو 1447" min="1300" max="2100"
-          onkeydown="if(event.key==='Enter') confirmAddYear()">
+        <input class="fi" type="number" id="new-year-input" placeholder="مثال: 2026 أو 1447" min="1300" max="2100" onkeydown="if(event.key==='Enter') confirmAddYear()">
       </div>
       <p id="add-year-err" style="color:var(--danger);font-size:12px;font-weight:700;display:none;margin-top:-8px"></p>
     </div>
@@ -961,7 +2841,7 @@ body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:var(--off);color:
   </div>
 </div>
 
-<div class="toast" id="toast"></div>
+<div class="toast" id="toast">✅ تم حفظ بيانات عام 2025 — جميع الأقسام محدَّثة</div>
 
 </main>
 
@@ -1046,7 +2926,39 @@ const DB = {
 };
 
 // ═══════════════════════════════════════════════════════
-// HELPERS
+// PERSISTENCE — حفظ واسترجاع البيانات من localStorage
+// ═══════════════════════════════════════════════════════
+const STORAGE_KEY = 'portal_khobar_v1';
+
+function persistDB() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({
+      years: DB.years,
+      kpis: DB.kpis,
+      kpiYears: DB.kpiYears||[],
+      kpiQuarters: DB.kpiQuarters||{}
+    }));
+  } catch(e) { console.warn('localStorage full or unavailable:', e); }
+}
+
+function loadPersistedDB() {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if(!saved) return;
+    const data = JSON.parse(saved);
+    if(data.years)      Object.assign(DB.years, data.years);
+    if(data.kpis)       DB.kpis = data.kpis;
+    if(data.kpiYears)   DB.kpiYears = data.kpiYears;
+    if(data.kpiQuarters) DB.kpiQuarters = data.kpiQuarters;
+  } catch(e) { console.warn('Failed to load persisted data:', e); }
+}
+
+function clearAllData() {
+  try { localStorage.removeItem(STORAGE_KEY); } catch(e) {}
+}
+
+// تحميل البيانات المحفوظة فور تعريف DB
+loadPersistedDB();
 // ═══════════════════════════════════════════════════════
 const fmt  = n => typeof n==='number' ? Math.round(n).toLocaleString('en-US') : 0;
 const fmtF = n => typeof n==='number' ? n.toLocaleString('en-US',{maximumFractionDigits:0}) : 0;
@@ -1749,6 +3661,7 @@ function initCtrl() {
   loadCtrlFields(ctrlYear);
   buildKpiEditTable();
   buildMosquesCtrl(ctrlYear);
+  loadGhSettings();
 }
 
 function rebuildCtrlYrToggle() {
@@ -1857,6 +3770,7 @@ function saveYearData() {
   d.rev1=get('c-rev1'); d.rev2=get('c-rev2'); d.rev3=get('c-rev3'); d.rev4=get('c-rev4');
   d.exp1=get('c-exp1'); d.exp2=get('c-exp2'); d.exp3=get('c-exp3'); d.exp4=get('c-exp4');
   collectHoods();
+  persistDB();
   showToast('تم حفظ بيانات عام '+y+' — جميع الأقسام محدَّثة');
 }
 
@@ -2042,6 +3956,7 @@ function saveKpis() {
     const ach=+inp.value||0;
     k.achieved=ach; k.pct=k.target>0?Math.round(ach/k.target*1000)/10:0;
   });
+  persistDB();
   showToast('تم حفظ مؤشرات الأداء — صفحة KPI محدَّثة');
 }
 
@@ -2075,6 +3990,7 @@ function handleMultiUpload(files) {
       } catch(err) { msgs.push('❌ '+file.name+': '+err.message); }
       pending--;
       if(pending===0) {
+        persistDB();
         initCtrl();
         res.className='upload-res ok';
         res.innerHTML=msgs.join('<br>')+'<br><small>✅ جميع الأقسام جاهزة للعرض. راجع الأرقام وعدّل ما يلزم ثم اضغط حفظ.</small>';
@@ -2410,6 +4326,7 @@ function collectMosques() {
 
 function saveMosques() {
   collectMosques();
+  persistDB();
   showToast('تم حفظ بيانات المساجد — الشؤون التعليمية محدَّثة');
 }
 // ═══════════════════════════════════════════════════════
@@ -2456,6 +4373,137 @@ function resetPinScreen() {
   const err = document.getElementById('pin-err');
   if(inp) { inp.value=''; inp.style.borderColor='var(--border)'; }
   if(err) err.textContent='';
+}
+
+// ═══════════════════════════════════════════════════════
+// GITHUB PAGES DEPLOY
+// ═══════════════════════════════════════════════════════
+
+// حفظ إعدادات GitHub في localStorage
+function saveGhSettings() {
+  const s = {
+    owner:    document.getElementById('gh-owner')?.value.trim(),
+    repo:     document.getElementById('gh-repo')?.value.trim(),
+    filename: document.getElementById('gh-filename')?.value.trim()||'portal.html',
+    branch:   document.getElementById('gh-branch')?.value.trim()||'main',
+    token:    document.getElementById('gh-token')?.value.trim()
+  };
+  try { localStorage.setItem('gh_settings', JSON.stringify(s)); } catch(e){}
+}
+
+function loadGhSettings() {
+  try {
+    const s = JSON.parse(localStorage.getItem('gh_settings')||'{}');
+    if(s.owner)    { const el=document.getElementById('gh-owner');    if(el) el.value=s.owner; }
+    if(s.repo)     { const el=document.getElementById('gh-repo');     if(el) el.value=s.repo; }
+    if(s.filename) { const el=document.getElementById('gh-filename'); if(el) el.value=s.filename; }
+    if(s.branch)   { const el=document.getElementById('gh-branch');   if(el) el.value=s.branch; }
+    if(s.token)    { const el=document.getElementById('gh-token');    if(el) el.value=s.token; }
+  } catch(e){}
+}
+
+function downloadPortalFile() {
+  persistDB();
+  const content = document.documentElement.outerHTML;
+  const blob = new Blob([content], {type:'text/html;charset=utf-8'});
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href     = url;
+  a.download = 'portal.html';
+  a.click();
+  URL.revokeObjectURL(url);
+  showToast('تم تحميل الملف — ارفعه على مستودعك في GitHub');
+}
+
+async function deployToGitHub() {
+  const owner    = document.getElementById('gh-owner')?.value.trim();
+  const repo     = document.getElementById('gh-repo')?.value.trim();
+  const filename = document.getElementById('gh-filename')?.value.trim()||'portal.html';
+  const branch   = document.getElementById('gh-branch')?.value.trim()||'main';
+  const token    = document.getElementById('gh-token')?.value.trim();
+  const statusEl = document.getElementById('gh-status');
+  const btn      = document.getElementById('gh-deploy-btn');
+
+  if(!owner||!repo||!token) {
+    statusEl.style.color='var(--danger)';
+    statusEl.textContent='❌ يرجى ملء جميع الحقول المطلوبة';
+    return;
+  }
+
+  // حفظ الإعدادات
+  saveGhSettings();
+
+  // تحديث حالة الزر
+  btn.disabled=true; btn.style.opacity='.6';
+  statusEl.style.color='var(--primary)';
+  statusEl.textContent='⏳ جاري تحضير الملف...';
+
+  try {
+    // ١. حفظ البيانات أولاً
+    persistDB();
+
+    // ٢. قراءة محتوى الصفحة الحالية كاملةً
+    const content = document.documentElement.outerHTML;
+    const encoded = btoa(unescape(encodeURIComponent(content)));
+
+    // ٣. جلب SHA الملف الحالي (مطلوب للتحديث)
+    statusEl.textContent='⏳ جاري الاتصال بـ GitHub...';
+    const apiBase = `https://api.github.com/repos/${owner}/${repo}/contents/${filename}`;
+    const headers = {
+      'Authorization': `token ${token}`,
+      'Accept': 'application/vnd.github.v3+json',
+      'Content-Type': 'application/json'
+    };
+
+    let sha = null;
+    try {
+      const getRes = await fetch(`${apiBase}?ref=${branch}`, {headers});
+      if(getRes.ok) {
+        const fileData = await getRes.json();
+        sha = fileData.sha;
+      }
+    } catch(e) { /* ملف جديد — بدون SHA */ }
+
+    // ٤. رفع الملف
+    statusEl.textContent='⏳ جاري الرفع...';
+    const now = new Date().toLocaleString('ar-SA');
+    const body = {
+      message: `تحديث البوابة — ${now}`,
+      content: encoded,
+      branch:  branch
+    };
+    if(sha) body.sha = sha;
+
+    const putRes = await fetch(apiBase, {
+      method: 'PUT',
+      headers,
+      body: JSON.stringify(body)
+    });
+
+    if(putRes.ok) {
+      statusEl.style.color='var(--success)';
+      statusEl.textContent='✅ تم النشر بنجاح — سيُحدَّث الموقع خلال دقيقة';
+      showToast('تم النشر على GitHub Pages بنجاح');
+    } else {
+      const err = await putRes.json();
+      throw new Error(err.message||putRes.statusText);
+    }
+
+  } catch(e) {
+    statusEl.style.color='var(--danger)';
+    statusEl.textContent='❌ فشل النشر: '+(e.message||'خطأ غير معروف');
+  } finally {
+    btn.disabled=false; btn.style.opacity='1';
+  }
+}
+
+function confirmClearAllData() {
+  const msg = 'تحذير: سيتم حذف جميع البيانات المحفوظة.\n\nاكتب "حذف" للتأكيد:';
+  const input = prompt(msg);
+  if(input !== 'حذف') { if(input !== null) showToast('إلغاء — لم يتم الحذف'); return; }
+  clearAllData();
+  showToast('تم حذف جميع البيانات — ستُستعاد البيانات الافتراضية عند إعادة فتح الصفحة');
+  setTimeout(()=>location.reload(), 2000);
 }
 
 function changePin() {
@@ -2800,5 +4848,6 @@ function closeForm(id){ document.getElementById('modal-'+id).classList.remove('o
 function submitForm(id){ closeForm(id); showToast('تم الحفظ — سيتم الربط بـ Google Sheets'); }
 document.querySelectorAll('.overlay').forEach(o=>o.addEventListener('click',e=>{if(e.target===o){o.classList.remove('open');document.body.style.overflow='';}}));
 </script>
-</body>
-</html>
+
+
+</body></html>
